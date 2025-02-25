@@ -1,0 +1,182 @@
+#! /opt/homebrew/Cellar/icarus-verilog/12.0/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/va_math.vpi";
+S_0x1316076e0 .scope module, "RefModule" "RefModule" 2 2;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 1 "resetn";
+    .port_info 2 /INPUT 3 "r";
+    .port_info 3 /OUTPUT 3 "g";
+P_0x131611eb0 .param/l "A" 0 2 9, +C4<00000000000000000000000000000000>;
+P_0x131611ef0 .param/l "B" 0 2 9, +C4<00000000000000000000000000000001>;
+P_0x131611f30 .param/l "C" 0 2 9, +C4<00000000000000000000000000000010>;
+P_0x131611f70 .param/l "D" 0 2 9, +C4<00000000000000000000000000000011>;
+v0x131607850_0 .net *"_ivl_12", 31 0, L_0x131622c90;  1 drivers
+L_0x1380780a0 .functor BUFT 1, C4<000000000000000000000000000000>, C4<0>, C4<0>, C4<0>;
+v0x131621d50_0 .net *"_ivl_15", 29 0, L_0x1380780a0;  1 drivers
+L_0x1380780e8 .functor BUFT 1, C4<00000000000000000000000000000010>, C4<0>, C4<0>, C4<0>;
+v0x131621df0_0 .net/2u *"_ivl_16", 31 0, L_0x1380780e8;  1 drivers
+v0x131621ea0_0 .net *"_ivl_18", 0 0, L_0x131622df0;  1 drivers
+v0x131621f40_0 .net *"_ivl_2", 31 0, L_0x131622a60;  1 drivers
+v0x131622030_0 .net *"_ivl_23", 31 0, L_0x131623080;  1 drivers
+L_0x138078130 .functor BUFT 1, C4<000000000000000000000000000000>, C4<0>, C4<0>, C4<0>;
+v0x1316220e0_0 .net *"_ivl_26", 29 0, L_0x138078130;  1 drivers
+L_0x138078178 .functor BUFT 1, C4<00000000000000000000000000000011>, C4<0>, C4<0>, C4<0>;
+v0x131622190_0 .net/2u *"_ivl_27", 31 0, L_0x138078178;  1 drivers
+v0x131622240_0 .net *"_ivl_29", 0 0, L_0x1316231a0;  1 drivers
+L_0x138078010 .functor BUFT 1, C4<000000000000000000000000000000>, C4<0>, C4<0>, C4<0>;
+v0x131622350_0 .net *"_ivl_5", 29 0, L_0x138078010;  1 drivers
+L_0x138078058 .functor BUFT 1, C4<00000000000000000000000000000001>, C4<0>, C4<0>, C4<0>;
+v0x1316223f0_0 .net/2u *"_ivl_6", 31 0, L_0x138078058;  1 drivers
+v0x1316224a0_0 .net *"_ivl_8", 0 0, L_0x131622b70;  1 drivers
+o0x138040250 .functor BUFZ 1, C4<z>; HiZ drive
+v0x131622540_0 .net "clk", 0 0, o0x138040250;  0 drivers
+v0x1316225e0_0 .net "g", 2 0, L_0x131622f30;  1 drivers
+v0x131622690_0 .var "next", 1 0;
+o0x1380402e0 .functor BUFZ 3, C4<zzz>; HiZ drive
+v0x131622740_0 .net "r", 2 0, o0x1380402e0;  0 drivers
+o0x138040310 .functor BUFZ 1, C4<z>; HiZ drive
+v0x1316227f0_0 .net "resetn", 0 0, o0x138040310;  0 drivers
+v0x131622980_0 .var "state", 1 0;
+E_0x131607ad0 .event anyedge, v0x131622740_0, v0x131622980_0;
+E_0x131607b10 .event posedge, v0x131622540_0;
+L_0x131622a60 .concat [ 2 30 0 0], v0x131622980_0, L_0x138078010;
+L_0x131622b70 .cmp/eq 32, L_0x131622a60, L_0x138078058;
+L_0x131622c90 .concat [ 2 30 0 0], v0x131622980_0, L_0x1380780a0;
+L_0x131622df0 .cmp/eq 32, L_0x131622c90, L_0x1380780e8;
+L_0x131622f30 .concat8 [ 1 1 1 0], L_0x131622b70, L_0x131622df0, L_0x1316231a0;
+L_0x131623080 .concat [ 2 30 0 0], v0x131622980_0, L_0x138078130;
+L_0x1316231a0 .cmp/eq 32, L_0x131623080, L_0x138078178;
+    .scope S_0x1316076e0;
+T_0 ;
+    %wait E_0x131607b10;
+    %load/vec4 v0x1316227f0_0;
+    %inv;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_0.0, 8;
+    %pushi/vec4 0, 0, 2;
+    %assign/vec4 v0x131622980_0, 0;
+    %jmp T_0.1;
+T_0.0 ;
+    %load/vec4 v0x131622690_0;
+    %assign/vec4 v0x131622980_0, 0;
+T_0.1 ;
+    %jmp T_0;
+    .thread T_0;
+    .scope S_0x1316076e0;
+T_1 ;
+    %wait E_0x131607ad0;
+    %load/vec4 v0x131622980_0;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 2;
+    %cmp/u;
+    %jmp/1 T_1.0, 6;
+    %dup/vec4;
+    %pushi/vec4 1, 0, 2;
+    %cmp/u;
+    %jmp/1 T_1.1, 6;
+    %dup/vec4;
+    %pushi/vec4 2, 0, 2;
+    %cmp/u;
+    %jmp/1 T_1.2, 6;
+    %dup/vec4;
+    %pushi/vec4 3, 0, 2;
+    %cmp/u;
+    %jmp/1 T_1.3, 6;
+    %pushi/vec4 3, 3, 2;
+    %store/vec4 v0x131622690_0, 0, 2;
+    %jmp T_1.5;
+T_1.0 ;
+    %load/vec4 v0x131622740_0;
+    %parti/s 1, 0, 2;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_1.6, 8;
+    %pushi/vec4 1, 0, 2;
+    %store/vec4 v0x131622690_0, 0, 2;
+    %jmp T_1.7;
+T_1.6 ;
+    %load/vec4 v0x131622740_0;
+    %parti/s 1, 1, 2;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_1.8, 8;
+    %pushi/vec4 2, 0, 2;
+    %store/vec4 v0x131622690_0, 0, 2;
+    %jmp T_1.9;
+T_1.8 ;
+    %load/vec4 v0x131622740_0;
+    %parti/s 1, 2, 3;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_1.10, 8;
+    %pushi/vec4 3, 0, 2;
+    %store/vec4 v0x131622690_0, 0, 2;
+    %jmp T_1.11;
+T_1.10 ;
+    %pushi/vec4 0, 0, 2;
+    %store/vec4 v0x131622690_0, 0, 2;
+T_1.11 ;
+T_1.9 ;
+T_1.7 ;
+    %jmp T_1.5;
+T_1.1 ;
+    %load/vec4 v0x131622740_0;
+    %parti/s 1, 0, 2;
+    %flag_set/vec4 8;
+    %jmp/0 T_1.12, 8;
+    %pushi/vec4 1, 0, 32;
+    %jmp/1 T_1.13, 8;
+T_1.12 ; End of true expr.
+    %pushi/vec4 0, 0, 32;
+    %jmp/0 T_1.13, 8;
+ ; End of false expr.
+    %blend;
+T_1.13;
+    %pad/s 2;
+    %store/vec4 v0x131622690_0, 0, 2;
+    %jmp T_1.5;
+T_1.2 ;
+    %load/vec4 v0x131622740_0;
+    %parti/s 1, 1, 2;
+    %flag_set/vec4 8;
+    %jmp/0 T_1.14, 8;
+    %pushi/vec4 2, 0, 32;
+    %jmp/1 T_1.15, 8;
+T_1.14 ; End of true expr.
+    %pushi/vec4 0, 0, 32;
+    %jmp/0 T_1.15, 8;
+ ; End of false expr.
+    %blend;
+T_1.15;
+    %pad/s 2;
+    %store/vec4 v0x131622690_0, 0, 2;
+    %jmp T_1.5;
+T_1.3 ;
+    %load/vec4 v0x131622740_0;
+    %parti/s 1, 2, 3;
+    %flag_set/vec4 8;
+    %jmp/0 T_1.16, 8;
+    %pushi/vec4 3, 0, 32;
+    %jmp/1 T_1.17, 8;
+T_1.16 ; End of true expr.
+    %pushi/vec4 0, 0, 32;
+    %jmp/0 T_1.17, 8;
+ ; End of false expr.
+    %blend;
+T_1.17;
+    %pad/s 2;
+    %store/vec4 v0x131622690_0, 0, 2;
+    %jmp T_1.5;
+T_1.5 ;
+    %pop/vec4 1;
+    %jmp T_1;
+    .thread T_1, $push;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "./dataset-macro-out/Prob148_2013_q2afsm_ref.sv";

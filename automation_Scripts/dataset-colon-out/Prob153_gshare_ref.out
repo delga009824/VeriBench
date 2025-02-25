@@ -1,0 +1,185 @@
+#! /opt/homebrew/Cellar/icarus-verilog/12.0/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/va_math.vpi";
+S_0x137f05590 .scope module, "RefModule" "RefModule" 2 2;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 1 "areset";
+    .port_info 2 /INPUT 1 "predict_valid";
+    .port_info 3 /INPUT 7 "predict_pc";
+    .port_info 4 /OUTPUT 1 "predict_taken";
+    .port_info 5 /OUTPUT 7 "predict_history";
+    .port_info 6 /INPUT 1 "train_valid";
+    .port_info 7 /INPUT 1 "train_taken";
+    .port_info 8 /INPUT 1 "train_mispredicted";
+    .port_info 9 /INPUT 7 "train_history";
+    .port_info 10 /INPUT 7 "train_pc";
+P_0x137f0e8d0 .param/l "LNT" 0 2 21, C4<01>;
+P_0x137f0e910 .param/l "LT" 0 2 21, C4<10>;
+P_0x137f0e950 .param/l "SNT" 0 2 21, C4<00>;
+P_0x137f0e990 .param/l "ST" 0 2 21, C4<11>;
+P_0x137f0e9d0 .param/l "n" 0 2 18, +C4<00000000000000000000000000000111>;
+o0x128040250 .functor BUFZ 7, C4<zzzzzzz>; HiZ drive
+L_0x137f22740 .functor XOR 7, v0x137f22860_0, o0x128040250, C4<0000000>, C4<0000000>;
+o0x1280402e0 .functor BUFZ 7, C4<zzzzzzz>; HiZ drive
+o0x128040370 .functor BUFZ 7, C4<zzzzzzz>; HiZ drive
+L_0x137f231b0 .functor XOR 7, o0x1280402e0, o0x128040370, C4<0000000>, C4<0000000>;
+v0x137f22110_0 .net *"_ivl_11", 0 0, L_0x137f234e0;  1 drivers
+L_0x128078058 .functor BUFT 1, C4<x>, C4<0>, C4<0>, C4<0>;
+v0x137f221d0_0 .net *"_ivl_12", 0 0, L_0x128078058;  1 drivers
+L_0x1280780a0 .functor BUFT 1, C4<xxxxxxx>, C4<0>, C4<0>, C4<0>;
+v0x137f22270_0 .net *"_ivl_16", 6 0, L_0x1280780a0;  1 drivers
+v0x137f22320_0 .net *"_ivl_4", 1 0, L_0x137f23280;  1 drivers
+v0x137f223d0_0 .net *"_ivl_6", 8 0, L_0x137f23360;  1 drivers
+L_0x128078010 .functor BUFT 1, C4<00>, C4<0>, C4<0>, C4<0>;
+v0x137f224c0_0 .net *"_ivl_9", 1 0, L_0x128078010;  1 drivers
+o0x128040160 .functor BUFZ 1, C4<z>; HiZ drive
+v0x137f22570_0 .net "areset", 0 0, o0x128040160;  0 drivers
+o0x128040190 .functor BUFZ 1, C4<z>; HiZ drive
+v0x137f22610_0 .net "clk", 0 0, o0x128040190;  0 drivers
+v0x137f226b0 .array "pht", 0 127, 1 0;
+v0x137f227c0_0 .net "predict_history", 6 0, L_0x137f23720;  1 drivers
+v0x137f22860_0 .var "predict_history_r", 6 0;
+v0x137f22910_0 .net "predict_index", 6 0, L_0x137f22740;  1 drivers
+v0x137f229c0_0 .net "predict_pc", 6 0, o0x128040250;  0 drivers
+v0x137f22a70_0 .net "predict_taken", 0 0, L_0x137f235c0;  1 drivers
+o0x1280402b0 .functor BUFZ 1, C4<z>; HiZ drive
+v0x137f22b10_0 .net "predict_valid", 0 0, o0x1280402b0;  0 drivers
+v0x137f22bb0_0 .net "train_history", 6 0, o0x1280402e0;  0 drivers
+v0x137f22c60_0 .net "train_index", 6 0, L_0x137f231b0;  1 drivers
+o0x128040340 .functor BUFZ 1, C4<z>; HiZ drive
+v0x137f22df0_0 .net "train_mispredicted", 0 0, o0x128040340;  0 drivers
+v0x137f22e80_0 .net "train_pc", 6 0, o0x128040370;  0 drivers
+o0x1280403a0 .functor BUFZ 1, C4<z>; HiZ drive
+v0x137f22f20_0 .net "train_taken", 0 0, o0x1280403a0;  0 drivers
+o0x1280403d0 .functor BUFZ 1, C4<z>; HiZ drive
+v0x137f22fc0_0 .net "train_valid", 0 0, o0x1280403d0;  0 drivers
+E_0x137f10a40 .event posedge, v0x137f22570_0, v0x137f22610_0;
+L_0x137f23280 .array/port v0x137f226b0, L_0x137f23360;
+L_0x137f23360 .concat [ 7 2 0 0], L_0x137f22740, L_0x128078010;
+L_0x137f234e0 .part L_0x137f23280, 1, 1;
+L_0x137f235c0 .functor MUXZ 1, L_0x128078058, L_0x137f234e0, o0x1280402b0, C4<>;
+L_0x137f23720 .functor MUXZ 7, L_0x1280780a0, v0x137f22860_0, o0x1280402b0, C4<>;
+S_0x137f05700 .scope begin, "$ivl_for_loop0" "$ivl_for_loop0" 2 29, 2 29 0, S_0x137f05590;
+ .timescale 0 0;
+v0x137f100f0_0 .var/i "i", 31 0;
+    .scope S_0x137f05590;
+T_0 ;
+    %wait E_0x137f10a40;
+    %load/vec4 v0x137f22570_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_0.0, 8;
+    %fork t_1, S_0x137f05700;
+    %jmp t_0;
+    .scope S_0x137f05700;
+t_1 ;
+    %pushi/vec4 0, 0, 32;
+    %store/vec4 v0x137f100f0_0, 0, 32;
+T_0.2 ;
+    %load/vec4 v0x137f100f0_0;
+    %cmpi/s 128, 0, 32;
+    %jmp/0xz T_0.3, 5;
+    %pushi/vec4 1, 0, 2;
+    %ix/getv/s 4, v0x137f100f0_0;
+    %store/vec4a v0x137f226b0, 4, 0;
+    %load/vec4 v0x137f100f0_0;
+    %addi 1, 0, 32;
+    %store/vec4 v0x137f100f0_0, 0, 32;
+    %jmp T_0.2;
+T_0.3 ;
+    %end;
+    .scope S_0x137f05590;
+t_0 %join;
+    %pushi/vec4 0, 0, 7;
+    %store/vec4 v0x137f22860_0, 0, 7;
+    %jmp T_0.1;
+T_0.0 ;
+    %load/vec4 v0x137f22b10_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_0.4, 8;
+    %load/vec4 v0x137f22860_0;
+    %load/vec4 v0x137f22a70_0;
+    %concat/vec4; draw_concat_vec4
+    %pad/u 7;
+    %assign/vec4 v0x137f22860_0, 0;
+T_0.4 ;
+    %load/vec4 v0x137f22fc0_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_0.6, 8;
+    %load/vec4 v0x137f22c60_0;
+    %pad/u 9;
+    %ix/vec4 4;
+    %load/vec4a v0x137f226b0, 4;
+    %pad/u 32;
+    %cmpi/u 3, 0, 32;
+    %flag_get/vec4 5;
+    %jmp/0 T_0.10, 5;
+    %load/vec4 v0x137f22f20_0;
+    %and;
+T_0.10;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_0.8, 8;
+    %load/vec4 v0x137f22c60_0;
+    %pad/u 9;
+    %ix/vec4 4;
+    %load/vec4a v0x137f226b0, 4;
+    %addi 1, 0, 2;
+    %load/vec4 v0x137f22c60_0;
+    %pad/u 9;
+    %ix/vec4 3;
+    %ix/load 4, 0, 0; Constant delay
+    %assign/vec4/a/d v0x137f226b0, 0, 4;
+    %jmp T_0.9;
+T_0.8 ;
+    %load/vec4 v0x137f22c60_0;
+    %pad/u 9;
+    %ix/vec4 4;
+    %load/vec4a v0x137f226b0, 4;
+    %pad/u 32;
+    %cmpi/u 0, 0, 32;
+    %flag_or 5, 4; GT is !LE
+    %flag_inv 5;
+    %flag_get/vec4 5;
+    %jmp/0 T_0.13, 5;
+    %load/vec4 v0x137f22f20_0;
+    %nor/r;
+    %and;
+T_0.13;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_0.11, 8;
+    %load/vec4 v0x137f22c60_0;
+    %pad/u 9;
+    %ix/vec4 4;
+    %load/vec4a v0x137f226b0, 4;
+    %subi 1, 0, 2;
+    %load/vec4 v0x137f22c60_0;
+    %pad/u 9;
+    %ix/vec4 3;
+    %ix/load 4, 0, 0; Constant delay
+    %assign/vec4/a/d v0x137f226b0, 0, 4;
+T_0.11 ;
+T_0.9 ;
+    %load/vec4 v0x137f22df0_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_0.14, 8;
+    %load/vec4 v0x137f22bb0_0;
+    %load/vec4 v0x137f22f20_0;
+    %concat/vec4; draw_concat_vec4
+    %pad/u 7;
+    %assign/vec4 v0x137f22860_0, 0;
+T_0.14 ;
+T_0.6 ;
+T_0.1 ;
+    %jmp T_0;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "./dataset-colon-out/Prob153_gshare_ref.sv";

@@ -1,0 +1,55 @@
+#! /opt/homebrew/Cellar/icarus-verilog/12.0/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/va_math.vpi";
+S_0x12d606520 .scope module, "RefModule" "RefModule" 2 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 1 "enable";
+    .port_info 2 /INPUT 1 "S";
+    .port_info 3 /INPUT 1 "A";
+    .port_info 4 /INPUT 1 "B";
+    .port_info 5 /INPUT 1 "C";
+    .port_info 6 /OUTPUT 1 "Z";
+o0x110020010 .functor BUFZ 1, C4<z>; HiZ drive
+v0x12d606740_0 .net "A", 0 0, o0x110020010;  0 drivers
+o0x110020040 .functor BUFZ 1, C4<z>; HiZ drive
+v0x12e8069e0_0 .net "B", 0 0, o0x110020040;  0 drivers
+o0x110020070 .functor BUFZ 1, C4<z>; HiZ drive
+v0x12e806a90_0 .net "C", 0 0, o0x110020070;  0 drivers
+o0x1100200a0 .functor BUFZ 1, C4<z>; HiZ drive
+v0x12e806b40_0 .net "S", 0 0, o0x1100200a0;  0 drivers
+v0x12e806bd0_0 .net "Z", 0 0, L_0x12e807130;  1 drivers
+v0x12e806ca0_0 .net *"_ivl_0", 2 0, L_0x12e806ff0;  1 drivers
+o0x110020130 .functor BUFZ 1, C4<z>; HiZ drive
+v0x12e806d30_0 .net "clk", 0 0, o0x110020130;  0 drivers
+o0x110020160 .functor BUFZ 1, C4<z>; HiZ drive
+v0x12e806dd0_0 .net "enable", 0 0, o0x110020160;  0 drivers
+v0x12e806e70_0 .var "q", 7 0;
+E_0x12d609dc0 .event posedge, v0x12e806d30_0;
+L_0x12e806ff0 .concat [ 1 1 1 0], o0x110020070, o0x110020040, o0x110020010;
+L_0x12e807130 .part/v v0x12e806e70_0, L_0x12e806ff0, 1;
+    .scope S_0x12d606520;
+T_0 ;
+    %wait E_0x12d609dc0;
+    %load/vec4 v0x12e806dd0_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_0.0, 8;
+    %load/vec4 v0x12e806e70_0;
+    %parti/s 7, 0, 2;
+    %load/vec4 v0x12e806b40_0;
+    %concat/vec4; draw_concat_vec4
+    %assign/vec4 v0x12e806e70_0, 0;
+T_0.0 ;
+    %jmp T_0;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "./dataset-string-out/Prob084_ece241_2013_q12_ref.sv";

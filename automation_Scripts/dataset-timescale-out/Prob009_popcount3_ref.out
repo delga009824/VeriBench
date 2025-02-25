@@ -1,0 +1,42 @@
+#! /opt/homebrew/Cellar/icarus-verilog/12.0/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/va_math.vpi";
+S_0x122f05650 .scope module, "RefModule" "RefModule" 2 2;
+ .timescale 0 0;
+    .port_info 0 /INPUT 3 "in";
+    .port_info 1 /OUTPUT 2 "out";
+v0x122f057c0_0 .net *"_ivl_1", 0 0, L_0x122f19be0;  1 drivers
+L_0x128078058 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x122f19390_0 .net *"_ivl_11", 0 0, L_0x128078058;  1 drivers
+v0x122f19430_0 .net *"_ivl_12", 1 0, L_0x122f1a020;  1 drivers
+v0x122f194e0_0 .net *"_ivl_15", 0 0, L_0x122f1a190;  1 drivers
+v0x122f19590_0 .net *"_ivl_16", 1 0, L_0x122f1a230;  1 drivers
+L_0x1280780a0 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x122f19680_0 .net *"_ivl_19", 0 0, L_0x1280780a0;  1 drivers
+v0x122f19730_0 .net *"_ivl_2", 1 0, L_0x122f19c80;  1 drivers
+L_0x128078010 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x122f197e0_0 .net *"_ivl_5", 0 0, L_0x128078010;  1 drivers
+v0x122f19890_0 .net *"_ivl_7", 0 0, L_0x122f19de0;  1 drivers
+v0x122f199a0_0 .net *"_ivl_8", 1 0, L_0x122f19ec0;  1 drivers
+o0x1280401f0 .functor BUFZ 3, C4<zzz>; HiZ drive
+v0x122f19a50_0 .net "in", 2 0, o0x1280401f0;  0 drivers
+v0x122f19b00_0 .net "out", 1 0, L_0x122f1a390;  1 drivers
+L_0x122f19be0 .part o0x1280401f0, 0, 1;
+L_0x122f19c80 .concat [ 1 1 0 0], L_0x122f19be0, L_0x128078010;
+L_0x122f19de0 .part o0x1280401f0, 1, 1;
+L_0x122f19ec0 .concat [ 1 1 0 0], L_0x122f19de0, L_0x128078058;
+L_0x122f1a020 .arith/sum 2, L_0x122f19c80, L_0x122f19ec0;
+L_0x122f1a190 .part o0x1280401f0, 2, 1;
+L_0x122f1a230 .concat [ 1 1 0 0], L_0x122f1a190, L_0x1280780a0;
+L_0x122f1a390 .arith/sum 2, L_0x122f1a020, L_0x122f1a230;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "./dataset-timescale-out/Prob009_popcount3_ref.sv";

@@ -1,0 +1,73 @@
+#! /opt/homebrew/Cellar/icarus-verilog/12.0/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/va_math.vpi";
+S_0x153f0b340 .scope module, "RefModule" "RefModule" 2 2;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1024 "in";
+    .port_info 1 /OUTPUT 8 "sel";
+    .port_info 2 /OUTPUT 4 "out";
+L_0x158078250 .functor BUFT 1, C4<000000000000000000000000zzzzzzzz>, C4<0>, C4<0>, C4<0>;
+v0x153f09d60_0 .net *"_ivl_0", 31 0, L_0x158078250;  1 drivers
+v0x153f1d5a0_0 .net *"_ivl_10", 31 0, L_0x153f1ea00;  1 drivers
+v0x153f1d640_0 .net *"_ivl_13", 0 0, L_0x153f1eb60;  1 drivers
+L_0x158078298 .functor BUFT 1, C4<000000000000000000000000zzzzzzzz>, C4<0>, C4<0>, C4<0>;
+v0x153f1d6f0_0 .net *"_ivl_14", 31 0, L_0x158078298;  1 drivers
+L_0x1580780a0 .functor BUFT 1, C4<00000000000000000000000000000100>, C4<0>, C4<0>, C4<0>;
+v0x153f1d7a0_0 .net/2u *"_ivl_18", 31 0, L_0x1580780a0;  1 drivers
+v0x153f1d890_0 .net *"_ivl_21", 31 0, L_0x153f1ec40;  1 drivers
+L_0x1580780e8 .functor BUFT 1, C4<00000000000000000000000000000010>, C4<0>, C4<0>, C4<0>;
+v0x153f1d940_0 .net/2u *"_ivl_22", 31 0, L_0x1580780e8;  1 drivers
+v0x153f1d9f0_0 .net *"_ivl_24", 31 0, L_0x153f1ed60;  1 drivers
+v0x153f1daa0_0 .net *"_ivl_27", 0 0, L_0x153f1eef0;  1 drivers
+L_0x1580782e0 .functor BUFT 1, C4<000000000000000000000000zzzzzzzz>, C4<0>, C4<0>, C4<0>;
+v0x153f1dbb0_0 .net *"_ivl_28", 31 0, L_0x1580782e0;  1 drivers
+L_0x158078130 .functor BUFT 1, C4<00000000000000000000000000000100>, C4<0>, C4<0>, C4<0>;
+v0x153f1dc60_0 .net/2u *"_ivl_32", 31 0, L_0x158078130;  1 drivers
+v0x153f1dd10_0 .net *"_ivl_35", 31 0, L_0x153f1f050;  1 drivers
+L_0x158078178 .functor BUFT 1, C4<00000000000000000000000000000001>, C4<0>, C4<0>, C4<0>;
+v0x153f1ddc0_0 .net/2u *"_ivl_36", 31 0, L_0x158078178;  1 drivers
+v0x153f1de70_0 .net *"_ivl_38", 31 0, L_0x153f1f170;  1 drivers
+L_0x158078010 .functor BUFT 1, C4<00000000000000000000000000000100>, C4<0>, C4<0>, C4<0>;
+v0x153f1df20_0 .net/2u *"_ivl_4", 31 0, L_0x158078010;  1 drivers
+v0x153f1dfd0_0 .net *"_ivl_41", 0 0, L_0x153f1f270;  1 drivers
+L_0x158078328 .functor BUFT 1, C4<000000000000000000000000zzzzzzzz>, C4<0>, C4<0>, C4<0>;
+v0x153f1e080_0 .net *"_ivl_42", 31 0, L_0x158078328;  1 drivers
+L_0x1580781c0 .functor BUFT 1, C4<00000000000000000000000000000100>, C4<0>, C4<0>, C4<0>;
+v0x153f1e210_0 .net/2u *"_ivl_46", 31 0, L_0x1580781c0;  1 drivers
+v0x153f1e2a0_0 .net *"_ivl_49", 31 0, L_0x153f1f3a0;  1 drivers
+L_0x158078208 .functor BUFT 1, C4<00000000000000000000000000000000>, C4<0>, C4<0>, C4<0>;
+v0x153f1e350_0 .net/2u *"_ivl_50", 31 0, L_0x158078208;  1 drivers
+v0x153f1e400_0 .net *"_ivl_52", 31 0, L_0x153f1f440;  1 drivers
+v0x153f1e4b0_0 .net *"_ivl_55", 0 0, L_0x153f1f5e0;  1 drivers
+v0x153f1e560_0 .net *"_ivl_7", 31 0, L_0x153f1e920;  1 drivers
+L_0x158078058 .functor BUFT 1, C4<00000000000000000000000000000011>, C4<0>, C4<0>, C4<0>;
+v0x153f1e610_0 .net/2u *"_ivl_8", 31 0, L_0x158078058;  1 drivers
+o0x158040490 .functor BUFZ 1024, C4<zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz>; HiZ drive
+v0x153f1e6c0_0 .net "in", 1023 0, o0x158040490;  0 drivers
+v0x153f1e770_0 .net "out", 3 0, L_0x153f1f700;  1 drivers
+o0x1580404f0 .functor BUFZ 8, C4<zzzzzzzz>; HiZ drive
+v0x153f1e820_0 .net "sel", 7 0, o0x1580404f0;  0 drivers
+L_0x153f1e920 .arith/mult 32, L_0x158078250, L_0x158078010;
+L_0x153f1ea00 .arith/sum 32, L_0x153f1e920, L_0x158078058;
+L_0x153f1eb60 .part/v o0x158040490, L_0x153f1ea00, 1;
+L_0x153f1ec40 .arith/mult 32, L_0x158078298, L_0x1580780a0;
+L_0x153f1ed60 .arith/sum 32, L_0x153f1ec40, L_0x1580780e8;
+L_0x153f1eef0 .part/v o0x158040490, L_0x153f1ed60, 1;
+L_0x153f1f050 .arith/mult 32, L_0x1580782e0, L_0x158078130;
+L_0x153f1f170 .arith/sum 32, L_0x153f1f050, L_0x158078178;
+L_0x153f1f270 .part/v o0x158040490, L_0x153f1f170, 1;
+L_0x153f1f3a0 .arith/mult 32, L_0x158078328, L_0x1580781c0;
+L_0x153f1f440 .arith/sum 32, L_0x153f1f3a0, L_0x158078208;
+L_0x153f1f5e0 .part/v o0x158040490, L_0x153f1f440, 1;
+L_0x153f1f700 .concat [ 1 1 1 1], L_0x153f1f5e0, L_0x153f1f270, L_0x153f1eef0, L_0x153f1eb60;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "./dataset-portmode-out/Prob021_mux256to1v_ref.sv";

@@ -1,0 +1,52 @@
+#! /opt/homebrew/Cellar/icarus-verilog/12.0/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/va_math.vpi";
+S_0x131705620 .scope module, "RefModule" "RefModule" 2 2;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "clk";
+    .port_info 1 /INPUT 1 "a";
+    .port_info 2 /INPUT 1 "b";
+    .port_info 3 /OUTPUT 1 "q";
+    .port_info 4 /OUTPUT 1 "state";
+o0x138040040 .functor BUFZ 1, C4<z>; HiZ drive
+o0x138040070 .functor BUFZ 1, C4<z>; HiZ drive
+L_0x131719140 .functor XOR 1, o0x138040040, o0x138040070, C4<0>, C4<0>;
+L_0x1317191f0 .functor XOR 1, L_0x131719140, v0x131718e00_0, C4<0>, C4<0>;
+L_0x1317192e0 .functor BUFZ 1, v0x131718e00_0, C4<0>, C4<0>, C4<0>;
+v0x1317083c0_0 .net *"_ivl_0", 0 0, L_0x131719140;  1 drivers
+v0x131718cd0_0 .net "a", 0 0, o0x138040040;  0 drivers
+v0x131718d70_0 .net "b", 0 0, o0x138040070;  0 drivers
+v0x131718e00_0 .var "c", 0 0;
+o0x1380400d0 .functor BUFZ 1, C4<z>; HiZ drive
+v0x131718ea0_0 .net "clk", 0 0, o0x1380400d0;  0 drivers
+v0x131718f80_0 .net "q", 0 0, L_0x1317191f0;  1 drivers
+v0x131719020_0 .net "state", 0 0, L_0x1317192e0;  1 drivers
+E_0x1317088c0 .event posedge, v0x131718ea0_0;
+    .scope S_0x131705620;
+T_0 ;
+    %wait E_0x1317088c0;
+    %load/vec4 v0x131718cd0_0;
+    %load/vec4 v0x131718d70_0;
+    %and;
+    %load/vec4 v0x131718cd0_0;
+    %load/vec4 v0x131718e00_0;
+    %and;
+    %or;
+    %load/vec4 v0x131718d70_0;
+    %load/vec4 v0x131718e00_0;
+    %and;
+    %or;
+    %assign/vec4 v0x131718e00_0, 0;
+    %jmp T_0;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "./dataset-portmode-out/Prob147_circuit10_ref.sv";

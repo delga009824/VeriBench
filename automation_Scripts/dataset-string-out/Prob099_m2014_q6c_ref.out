@@ -1,0 +1,46 @@
+#! /opt/homebrew/Cellar/icarus-verilog/12.0/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/va_math.vpi";
+S_0x156705590 .scope module, "RefModule" "RefModule" 2 2;
+ .timescale 0 0;
+    .port_info 0 /INPUT 6 "y";
+    .port_info 1 /INPUT 1 "w";
+    .port_info 2 /OUTPUT 1 "Y1";
+    .port_info 3 /OUTPUT 1 "Y3";
+o0x158040220 .functor BUFZ 1, C4<z>; HiZ drive
+L_0x15671a8c0 .functor NOT 1, o0x158040220, C4<0>, C4<0>, C4<0>;
+L_0x15671a950 .functor AND 1, L_0x15671a820, L_0x15671a8c0, C4<1>, C4<1>;
+L_0x15671ac00 .functor OR 1, L_0x15671aa80, L_0x15671ab60, C4<0>, C4<0>;
+L_0x15671ae50 .functor OR 1, L_0x15671ac00, L_0x15671ad30, C4<0>, C4<0>;
+L_0x15671b010 .functor OR 1, L_0x15671ae50, L_0x15671af40, C4<0>, C4<0>;
+L_0x15671b100 .functor AND 1, L_0x15671b010, o0x158040220, C4<1>, C4<1>;
+v0x156709e10_0 .net "Y1", 0 0, L_0x15671a950;  1 drivers
+v0x156719f10_0 .net "Y3", 0 0, L_0x15671b100;  1 drivers
+v0x156719fb0_0 .net *"_ivl_1", 0 0, L_0x15671a820;  1 drivers
+v0x15671a050_0 .net *"_ivl_10", 0 0, L_0x15671ac00;  1 drivers
+v0x15671a100_0 .net *"_ivl_13", 0 0, L_0x15671ad30;  1 drivers
+v0x15671a1f0_0 .net *"_ivl_14", 0 0, L_0x15671ae50;  1 drivers
+v0x15671a2a0_0 .net *"_ivl_17", 0 0, L_0x15671af40;  1 drivers
+v0x15671a350_0 .net *"_ivl_18", 0 0, L_0x15671b010;  1 drivers
+v0x15671a400_0 .net *"_ivl_2", 0 0, L_0x15671a8c0;  1 drivers
+v0x15671a510_0 .net *"_ivl_7", 0 0, L_0x15671aa80;  1 drivers
+v0x15671a5c0_0 .net *"_ivl_9", 0 0, L_0x15671ab60;  1 drivers
+v0x15671a670_0 .net "w", 0 0, o0x158040220;  0 drivers
+o0x158040250 .functor BUFZ 6, C4<zzzzzz>; HiZ drive
+v0x15671a710_0 .net "y", 5 0, o0x158040250;  0 drivers
+L_0x15671a820 .part o0x158040250, 0, 1;
+L_0x15671aa80 .part o0x158040250, 1, 1;
+L_0x15671ab60 .part o0x158040250, 2, 1;
+L_0x15671ad30 .part o0x158040250, 4, 1;
+L_0x15671af40 .part o0x158040250, 5, 1;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "./dataset-string-out/Prob099_m2014_q6c_ref.sv";

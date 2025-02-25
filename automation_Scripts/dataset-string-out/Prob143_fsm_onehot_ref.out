@@ -1,0 +1,114 @@
+#! /opt/homebrew/Cellar/icarus-verilog/12.0/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/va_math.vpi";
+S_0x1526075e0 .scope module, "RefModule" "RefModule" 2 2;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /INPUT 10 "state";
+    .port_info 2 /OUTPUT 10 "next_state";
+    .port_info 3 /OUTPUT 1 "out1";
+    .port_info 4 /OUTPUT 1 "out2";
+L_0x1526288c0 .functor OR 1, L_0x152628780, L_0x152628820, C4<0>, C4<0>;
+L_0x152628bb0 .functor OR 1, L_0x1526289d0, L_0x152628a70, C4<0>, C4<0>;
+L_0x152628ff0 .functor OR 1, L_0x152628e10, L_0x152628f50, C4<0>, C4<0>;
+L_0x1526291f0 .functor OR 1, L_0x152628ff0, L_0x152629100, C4<0>, C4<0>;
+L_0x152629480 .functor OR 1, L_0x1526291f0, L_0x1526292e0, C4<0>, C4<0>;
+L_0x152629540 .functor AND 1, L_0x152628ca0, L_0x152629480, C4<1>, C4<1>;
+L_0x1526297d0 .functor OR 1, L_0x152629630, L_0x152629730, C4<0>, C4<0>;
+L_0x152629a10 .functor OR 1, L_0x1526297d0, L_0x152629900, C4<0>, C4<0>;
+o0x158040790 .functor BUFZ 1, C4<z>; HiZ drive
+L_0x152629a80 .functor AND 1, o0x158040790, L_0x152629a10, C4<1>, C4<1>;
+L_0x152629c60 .functor AND 1, o0x158040790, L_0x152629bc0, C4<1>, C4<1>;
+L_0x1526299a0 .functor AND 1, o0x158040790, L_0x152629cd0, C4<1>, C4<1>;
+L_0x152629fb0 .functor AND 1, o0x158040790, L_0x152629f10, C4<1>, C4<1>;
+L_0x15262a190 .functor AND 1, o0x158040790, L_0x15262a060, C4<1>, C4<1>;
+L_0x152629380 .functor AND 1, o0x158040790, L_0x15262a2b0, C4<1>, C4<1>;
+L_0x15262a100 .functor OR 1, L_0x15262a550, L_0x15262a690, C4<0>, C4<0>;
+L_0x15262a240 .functor AND 1, o0x158040790, L_0x15262a100, C4<1>, C4<1>;
+L_0x152629e30 .functor AND 1, L_0x15262a930, L_0x15262a5f0, C4<1>, C4<1>;
+L_0x15262b060 .functor AND 1, L_0x15262aef0, L_0x15262a9d0, C4<1>, C4<1>;
+v0x15260dd90_0 .net *"_ivl_1", 0 0, L_0x152628780;  1 drivers
+v0x152626780_0 .net *"_ivl_100", 0 0, L_0x15262aef0;  1 drivers
+v0x152626820_0 .net *"_ivl_102", 0 0, L_0x15262a9d0;  1 drivers
+v0x1526268c0_0 .net *"_ivl_104", 0 0, L_0x15262b060;  1 drivers
+v0x152626960_0 .net *"_ivl_15", 0 0, L_0x152628ca0;  1 drivers
+v0x152626a40_0 .net *"_ivl_17", 4 0, L_0x152628d70;  1 drivers
+v0x152626af0_0 .net *"_ivl_19", 0 0, L_0x152628e10;  1 drivers
+v0x152626b90_0 .net *"_ivl_21", 0 0, L_0x152628f50;  1 drivers
+v0x152626c40_0 .net *"_ivl_22", 0 0, L_0x152628ff0;  1 drivers
+v0x152626d50_0 .net *"_ivl_25", 0 0, L_0x152629100;  1 drivers
+v0x152626e00_0 .net *"_ivl_26", 0 0, L_0x1526291f0;  1 drivers
+v0x152626eb0_0 .net *"_ivl_29", 0 0, L_0x1526292e0;  1 drivers
+v0x152626f60_0 .net *"_ivl_3", 0 0, L_0x152628820;  1 drivers
+v0x152627010_0 .net *"_ivl_30", 0 0, L_0x152629480;  1 drivers
+v0x1526270c0_0 .net *"_ivl_33", 0 0, L_0x152629540;  1 drivers
+v0x152627160_0 .net *"_ivl_37", 0 0, L_0x152629630;  1 drivers
+v0x152627210_0 .net *"_ivl_39", 0 0, L_0x152629730;  1 drivers
+v0x1526273a0_0 .net *"_ivl_40", 0 0, L_0x1526297d0;  1 drivers
+v0x152627430_0 .net *"_ivl_43", 0 0, L_0x152629900;  1 drivers
+v0x1526274e0_0 .net *"_ivl_44", 0 0, L_0x152629a10;  1 drivers
+v0x152627590_0 .net *"_ivl_47", 0 0, L_0x152629a80;  1 drivers
+v0x152627630_0 .net *"_ivl_51", 0 0, L_0x152629bc0;  1 drivers
+v0x1526276e0_0 .net *"_ivl_53", 0 0, L_0x152629c60;  1 drivers
+v0x152627780_0 .net *"_ivl_57", 0 0, L_0x152629cd0;  1 drivers
+v0x152627830_0 .net *"_ivl_59", 0 0, L_0x1526299a0;  1 drivers
+v0x1526278d0_0 .net *"_ivl_63", 0 0, L_0x152629f10;  1 drivers
+v0x152627980_0 .net *"_ivl_65", 0 0, L_0x152629fb0;  1 drivers
+v0x152627a20_0 .net *"_ivl_69", 0 0, L_0x15262a060;  1 drivers
+v0x152627ad0_0 .net *"_ivl_7", 0 0, L_0x1526289d0;  1 drivers
+v0x152627b80_0 .net *"_ivl_71", 0 0, L_0x15262a190;  1 drivers
+v0x152627c20_0 .net *"_ivl_75", 0 0, L_0x15262a2b0;  1 drivers
+v0x152627cd0_0 .net *"_ivl_77", 0 0, L_0x152629380;  1 drivers
+v0x152627d70_0 .net *"_ivl_81", 0 0, L_0x15262a550;  1 drivers
+v0x1526272c0_0 .net *"_ivl_83", 0 0, L_0x15262a690;  1 drivers
+v0x152628000_0 .net *"_ivl_84", 0 0, L_0x15262a100;  1 drivers
+v0x152628090_0 .net *"_ivl_87", 0 0, L_0x15262a240;  1 drivers
+v0x152628120_0 .net *"_ivl_9", 0 0, L_0x152628a70;  1 drivers
+v0x1526281d0_0 .net *"_ivl_91", 0 0, L_0x15262a930;  1 drivers
+v0x152628270_0 .net *"_ivl_93", 0 0, L_0x15262a5f0;  1 drivers
+v0x152628320_0 .net *"_ivl_95", 0 0, L_0x152629e30;  1 drivers
+v0x1526283c0_0 .net "in", 0 0, o0x158040790;  0 drivers
+v0x152628460_0 .net "next_state", 9 0, L_0x15262abb0;  1 drivers
+v0x152628510_0 .net "out1", 0 0, L_0x1526288c0;  1 drivers
+v0x1526285b0_0 .net "out2", 0 0, L_0x152628bb0;  1 drivers
+o0x158040850 .functor BUFZ 10, C4<zzzzzzzzzz>; HiZ drive
+v0x152628650_0 .net "state", 9 0, o0x158040850;  0 drivers
+L_0x152628780 .part o0x158040850, 8, 1;
+L_0x152628820 .part o0x158040850, 9, 1;
+L_0x1526289d0 .part o0x158040850, 7, 1;
+L_0x152628a70 .part o0x158040850, 9, 1;
+L_0x152628ca0 .reduce/nor o0x158040790;
+L_0x152628d70 .part o0x158040850, 0, 5;
+L_0x152628e10 .reduce/or L_0x152628d70;
+L_0x152628f50 .part o0x158040850, 7, 1;
+L_0x152629100 .part o0x158040850, 8, 1;
+L_0x1526292e0 .part o0x158040850, 9, 1;
+L_0x152629630 .part o0x158040850, 0, 1;
+L_0x152629730 .part o0x158040850, 8, 1;
+L_0x152629900 .part o0x158040850, 9, 1;
+L_0x152629bc0 .part o0x158040850, 1, 1;
+L_0x152629cd0 .part o0x158040850, 2, 1;
+L_0x152629f10 .part o0x158040850, 3, 1;
+L_0x15262a060 .part o0x158040850, 4, 1;
+L_0x15262a2b0 .part o0x158040850, 5, 1;
+L_0x15262a550 .part o0x158040850, 6, 1;
+L_0x15262a690 .part o0x158040850, 7, 1;
+L_0x15262a930 .reduce/nor o0x158040790;
+L_0x15262a5f0 .part o0x158040850, 5, 1;
+LS_0x15262abb0_0_0 .concat8 [ 1 1 1 1], L_0x152629540, L_0x152629a80, L_0x152629c60, L_0x1526299a0;
+LS_0x15262abb0_0_4 .concat8 [ 1 1 1 1], L_0x152629fb0, L_0x15262a190, L_0x152629380, L_0x15262a240;
+LS_0x15262abb0_0_8 .concat8 [ 1 1 0 0], L_0x152629e30, L_0x15262b060;
+L_0x15262abb0 .concat8 [ 4 4 2 0], LS_0x15262abb0_0_0, LS_0x15262abb0_0_4, LS_0x15262abb0_0_8;
+L_0x15262aef0 .reduce/nor o0x158040790;
+L_0x15262a9d0 .part o0x158040850, 6, 1;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "./dataset-string-out/Prob143_fsm_onehot_ref.sv";

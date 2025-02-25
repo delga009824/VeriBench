@@ -1,0 +1,52 @@
+#! /opt/homebrew/Cellar/icarus-verilog/12.0/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/va_math.vpi";
+S_0x11de06dd0 .scope module, "RefModule" "RefModule" 2 2;
+ .timescale 0 0;
+    .port_info 0 /INPUT 5 "a";
+    .port_info 1 /INPUT 5 "b";
+    .port_info 2 /INPUT 5 "c";
+    .port_info 3 /INPUT 5 "d";
+    .port_info 4 /INPUT 5 "e";
+    .port_info 5 /INPUT 5 "f";
+    .port_info 6 /OUTPUT 8 "w";
+    .port_info 7 /OUTPUT 8 "x";
+    .port_info 8 /OUTPUT 8 "y";
+    .port_info 9 /OUTPUT 8 "z";
+L_0x110068010 .functor BUFT 1, C4<11>, C4<0>, C4<0>, C4<0>;
+v0x11de0c0c0_0 .net/2u *"_ivl_5", 1 0, L_0x110068010;  1 drivers
+v0x11de1bd50_0 .net *"_ivl_7", 31 0, L_0x11de1c9e0;  1 drivers
+o0x110030070 .functor BUFZ 5, C4<zzzzz>; HiZ drive
+v0x11de1bdf0_0 .net "a", 4 0, o0x110030070;  0 drivers
+o0x1100300a0 .functor BUFZ 5, C4<zzzzz>; HiZ drive
+v0x11de1bea0_0 .net "b", 4 0, o0x1100300a0;  0 drivers
+o0x1100300d0 .functor BUFZ 5, C4<zzzzz>; HiZ drive
+v0x11de1bf50_0 .net "c", 4 0, o0x1100300d0;  0 drivers
+o0x110030100 .functor BUFZ 5, C4<zzzzz>; HiZ drive
+v0x11de1c040_0 .net "d", 4 0, o0x110030100;  0 drivers
+o0x110030130 .functor BUFZ 5, C4<zzzzz>; HiZ drive
+v0x11de1c0f0_0 .net "e", 4 0, o0x110030130;  0 drivers
+o0x110030160 .functor BUFZ 5, C4<zzzzz>; HiZ drive
+v0x11de1c1a0_0 .net "f", 4 0, o0x110030160;  0 drivers
+v0x11de1c250_0 .net "w", 7 0, L_0x11de1c660;  1 drivers
+v0x11de1c360_0 .net "x", 7 0, L_0x11de1c700;  1 drivers
+v0x11de1c410_0 .net "y", 7 0, L_0x11de1c7e0;  1 drivers
+v0x11de1c4c0_0 .net "z", 7 0, L_0x11de1c880;  1 drivers
+L_0x11de1c660 .part L_0x11de1c9e0, 24, 8;
+L_0x11de1c700 .part L_0x11de1c9e0, 16, 8;
+L_0x11de1c7e0 .part L_0x11de1c9e0, 8, 8;
+L_0x11de1c880 .part L_0x11de1c9e0, 0, 8;
+LS_0x11de1c9e0_0_0 .concat [ 2 5 5 5], L_0x110068010, o0x110030160, o0x110030130, o0x110030100;
+LS_0x11de1c9e0_0_4 .concat [ 5 5 5 0], o0x1100300d0, o0x1100300a0, o0x110030070;
+L_0x11de1c9e0 .concat [ 17 15 0 0], LS_0x11de1c9e0_0_0, LS_0x11de1c9e0_0_4;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "./dataset-operator-out/Prob064_vector3_ref.sv";

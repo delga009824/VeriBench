@@ -1,0 +1,81 @@
+#! /opt/homebrew/Cellar/icarus-verilog/12.0/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/va_math.vpi";
+S_0x140004110 .scope module, "RefModule" "RefModule" 2 2;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1024 "in";
+    .port_info 1 /INPUT 8 "sel";
+    .port_info 2 /OUTPUT 4 "out";
+v0x140004300_0 .net *"_ivl_0", 31 0, L_0x140015a00;  1 drivers
+v0x1400143c0_0 .net *"_ivl_10", 31 0, L_0x140015c30;  1 drivers
+v0x140014460_0 .net *"_ivl_13", 0 0, L_0x140015d90;  1 drivers
+v0x140014510_0 .net *"_ivl_14", 31 0, L_0x140015e70;  1 drivers
+L_0x1280400e8 .functor BUFT 1, C4<000000000000000000000000>, C4<0>, C4<0>, C4<0>;
+v0x1400145c0_0 .net *"_ivl_17", 23 0, L_0x1280400e8;  1 drivers
+L_0x128040130 .functor BUFT 1, C4<00000000000000000000000000000100>, C4<0>, C4<0>, C4<0>;
+v0x1400146b0_0 .net/2u *"_ivl_18", 31 0, L_0x128040130;  1 drivers
+v0x140014760_0 .net *"_ivl_21", 31 0, L_0x140016000;  1 drivers
+L_0x128040178 .functor BUFT 1, C4<00000000000000000000000000000010>, C4<0>, C4<0>, C4<0>;
+v0x140014810_0 .net/2u *"_ivl_22", 31 0, L_0x128040178;  1 drivers
+v0x1400148c0_0 .net *"_ivl_24", 31 0, L_0x140016120;  1 drivers
+v0x1400149d0_0 .net *"_ivl_27", 0 0, L_0x1400162a0;  1 drivers
+v0x140014a80_0 .net *"_ivl_28", 31 0, L_0x140016380;  1 drivers
+L_0x128040010 .functor BUFT 1, C4<000000000000000000000000>, C4<0>, C4<0>, C4<0>;
+v0x140014b30_0 .net *"_ivl_3", 23 0, L_0x128040010;  1 drivers
+L_0x1280401c0 .functor BUFT 1, C4<000000000000000000000000>, C4<0>, C4<0>, C4<0>;
+v0x140014be0_0 .net *"_ivl_31", 23 0, L_0x1280401c0;  1 drivers
+L_0x128040208 .functor BUFT 1, C4<00000000000000000000000000000100>, C4<0>, C4<0>, C4<0>;
+v0x140014c90_0 .net/2u *"_ivl_32", 31 0, L_0x128040208;  1 drivers
+v0x140014d40_0 .net *"_ivl_35", 31 0, L_0x140016470;  1 drivers
+L_0x128040250 .functor BUFT 1, C4<00000000000000000000000000000001>, C4<0>, C4<0>, C4<0>;
+v0x140014df0_0 .net/2u *"_ivl_36", 31 0, L_0x128040250;  1 drivers
+v0x140014ea0_0 .net *"_ivl_38", 31 0, L_0x140016610;  1 drivers
+L_0x128040058 .functor BUFT 1, C4<00000000000000000000000000000100>, C4<0>, C4<0>, C4<0>;
+v0x140015030_0 .net/2u *"_ivl_4", 31 0, L_0x128040058;  1 drivers
+v0x1400150c0_0 .net *"_ivl_41", 0 0, L_0x140016770;  1 drivers
+v0x140015170_0 .net *"_ivl_42", 31 0, L_0x140016810;  1 drivers
+L_0x128040298 .functor BUFT 1, C4<000000000000000000000000>, C4<0>, C4<0>, C4<0>;
+v0x140015220_0 .net *"_ivl_45", 23 0, L_0x128040298;  1 drivers
+L_0x1280402e0 .functor BUFT 1, C4<00000000000000000000000000000100>, C4<0>, C4<0>, C4<0>;
+v0x1400152d0_0 .net/2u *"_ivl_46", 31 0, L_0x1280402e0;  1 drivers
+v0x140015380_0 .net *"_ivl_49", 31 0, L_0x1400169a0;  1 drivers
+L_0x128040328 .functor BUFT 1, C4<00000000000000000000000000000000>, C4<0>, C4<0>, C4<0>;
+v0x140015430_0 .net/2u *"_ivl_50", 31 0, L_0x128040328;  1 drivers
+v0x1400154e0_0 .net *"_ivl_52", 31 0, L_0x140016a80;  1 drivers
+v0x140015590_0 .net *"_ivl_55", 0 0, L_0x140016c40;  1 drivers
+v0x140015640_0 .net *"_ivl_7", 31 0, L_0x140015b10;  1 drivers
+L_0x1280400a0 .functor BUFT 1, C4<00000000000000000000000000000011>, C4<0>, C4<0>, C4<0>;
+v0x1400156f0_0 .net/2u *"_ivl_8", 31 0, L_0x1280400a0;  1 drivers
+o0x128008550 .functor BUFZ 1024, C4<zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz>; HiZ drive
+v0x1400157a0_0 .net "in", 1023 0, o0x128008550;  0 drivers
+v0x140015850_0 .net "out", 3 0, L_0x140016d60;  1 drivers
+o0x1280085b0 .functor BUFZ 8, C4<zzzzzzzz>; HiZ drive
+v0x140015900_0 .net "sel", 7 0, o0x1280085b0;  0 drivers
+L_0x140015a00 .concat [ 8 24 0 0], o0x1280085b0, L_0x128040010;
+L_0x140015b10 .arith/mult 32, L_0x140015a00, L_0x128040058;
+L_0x140015c30 .arith/sum 32, L_0x140015b10, L_0x1280400a0;
+L_0x140015d90 .part/v o0x128008550, L_0x140015c30, 1;
+L_0x140015e70 .concat [ 8 24 0 0], o0x1280085b0, L_0x1280400e8;
+L_0x140016000 .arith/mult 32, L_0x140015e70, L_0x128040130;
+L_0x140016120 .arith/sum 32, L_0x140016000, L_0x128040178;
+L_0x1400162a0 .part/v o0x128008550, L_0x140016120, 1;
+L_0x140016380 .concat [ 8 24 0 0], o0x1280085b0, L_0x1280401c0;
+L_0x140016470 .arith/mult 32, L_0x140016380, L_0x128040208;
+L_0x140016610 .arith/sum 32, L_0x140016470, L_0x128040250;
+L_0x140016770 .part/v o0x128008550, L_0x140016610, 1;
+L_0x140016810 .concat [ 8 24 0 0], o0x1280085b0, L_0x128040298;
+L_0x1400169a0 .arith/mult 32, L_0x140016810, L_0x1280402e0;
+L_0x140016a80 .arith/sum 32, L_0x1400169a0, L_0x128040328;
+L_0x140016c40 .part/v o0x128008550, L_0x140016a80, 1;
+L_0x140016d60 .concat [ 1 1 1 1], L_0x140016c40, L_0x140016770, L_0x1400162a0, L_0x140015d90;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "./dataset_spec-to-rtl/Prob021_mux256to1v_ref.sv";

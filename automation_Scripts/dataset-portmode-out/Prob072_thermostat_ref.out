@@ -1,0 +1,41 @@
+#! /opt/homebrew/Cellar/icarus-verilog/12.0/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/va_math.vpi";
+S_0x1387055e0 .scope module, "RefModule" "RefModule" 2 2;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "mode";
+    .port_info 1 /INPUT 1 "too_cold";
+    .port_info 2 /INPUT 1 "too_hot";
+    .port_info 3 /INPUT 1 "fan_on";
+    .port_info 4 /OUTPUT 1 "heater";
+    .port_info 5 /OUTPUT 1 "aircon";
+    .port_info 6 /OUTPUT 1 "fan";
+o0x1400400d0 .functor BUFZ 1, C4<z>; HiZ drive
+L_0x138719500 .functor OR 1, L_0x138719410, o0x1400400d0, C4<0>, C4<0>;
+o0x140040130 .functor BUFZ 1, C4<z>; HiZ drive
+o0x140040160 .functor BUFZ 1, C4<z>; HiZ drive
+L_0x1387195f0 .functor AND 1, o0x140040130, o0x140040160, C4<1>, C4<1>;
+L_0x138719720 .functor NOT 1, o0x140040130, C4<0>, C4<0>, C4<0>;
+o0x140040190 .functor BUFZ 1, C4<z>; HiZ drive
+L_0x138719790 .functor AND 1, L_0x138719720, o0x140040190, C4<1>, C4<1>;
+v0x138709020_0 .net *"_ivl_0", 0 0, L_0x138719410;  1 drivers
+v0x138718e00_0 .net *"_ivl_6", 0 0, L_0x138719720;  1 drivers
+v0x138718ea0_0 .net "aircon", 0 0, L_0x138719790;  1 drivers
+v0x138718f50_0 .net "fan", 0 0, L_0x138719500;  1 drivers
+v0x138718fe0_0 .net "fan_on", 0 0, o0x1400400d0;  0 drivers
+v0x1387190c0_0 .net "heater", 0 0, L_0x1387195f0;  1 drivers
+v0x138719160_0 .net "mode", 0 0, o0x140040130;  0 drivers
+v0x138719200_0 .net "too_cold", 0 0, o0x140040160;  0 drivers
+v0x1387192a0_0 .net "too_hot", 0 0, o0x140040190;  0 drivers
+L_0x138719410 .functor MUXZ 1, o0x140040190, o0x140040160, o0x140040130, C4<>;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "./dataset-portmode-out/Prob072_thermostat_ref.sv";

@@ -1,0 +1,43 @@
+#! /opt/homebrew/Cellar/icarus-verilog/12.0/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/va_math.vpi";
+S_0x134f09130 .scope module, "RefModule" "RefModule" 2 2;
+ .timescale 0 0;
+    .port_info 0 /INPUT 3 "a";
+    .port_info 1 /INPUT 3 "b";
+    .port_info 2 /OUTPUT 3 "out_or_bitwise";
+    .port_info 3 /OUTPUT 1 "out_or_logical";
+    .port_info 4 /OUTPUT 6 "out_not";
+o0x138040130 .functor BUFZ 3, C4<zzz>; HiZ drive
+o0x138040160 .functor BUFZ 3, C4<zzz>; HiZ drive
+L_0x134f1a0e0 .functor OR 3, o0x138040130, o0x138040160, C4<000>, C4<000>;
+L_0x134f1a3f0 .functor OR 1, L_0x134f1a190, L_0x134f1a2d0, C4<0>, C4<0>;
+L_0x134f1a4e0 .functor NOT 3, o0x138040160, C4<000>, C4<000>, C4<000>;
+L_0x134f1a550 .functor NOT 3, o0x138040130, C4<000>, C4<000>, C4<000>;
+v0x134f05590_0 .net *"_ivl_12", 2 0, L_0x134f1a4e0;  1 drivers
+v0x134f19920_0 .net *"_ivl_14", 2 0, L_0x134f1a550;  1 drivers
+L_0x138078010 .functor BUFT 1, C4<000>, C4<0>, C4<0>, C4<0>;
+v0x134f199c0_0 .net/2u *"_ivl_2", 2 0, L_0x138078010;  1 drivers
+v0x134f19a70_0 .net *"_ivl_4", 0 0, L_0x134f1a190;  1 drivers
+L_0x138078058 .functor BUFT 1, C4<000>, C4<0>, C4<0>, C4<0>;
+v0x134f19b10_0 .net/2u *"_ivl_6", 2 0, L_0x138078058;  1 drivers
+v0x134f19c00_0 .net *"_ivl_8", 0 0, L_0x134f1a2d0;  1 drivers
+v0x134f19ca0_0 .net "a", 2 0, o0x138040130;  0 drivers
+v0x134f19d50_0 .net "b", 2 0, o0x138040160;  0 drivers
+v0x134f19e00_0 .net "out_not", 5 0, L_0x134f1a5e0;  1 drivers
+v0x134f19f10_0 .net "out_or_bitwise", 2 0, L_0x134f1a0e0;  1 drivers
+v0x134f19fc0_0 .net "out_or_logical", 0 0, L_0x134f1a3f0;  1 drivers
+L_0x134f1a190 .cmp/ne 3, o0x138040130, L_0x138078010;
+L_0x134f1a2d0 .cmp/ne 3, o0x138040160, L_0x138078058;
+L_0x134f1a5e0 .concat [ 3 3 0 0], L_0x134f1a550, L_0x134f1a4e0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "./dataset-macro-out/Prob044_vectorgates_ref.sv";

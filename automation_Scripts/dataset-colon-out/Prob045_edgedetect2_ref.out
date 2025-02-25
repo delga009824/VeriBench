@@ -1,0 +1,37 @@
+#! /opt/homebrew/Cellar/icarus-verilog/12.0/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/va_math.vpi";
+S_0x130f05700 .scope module, "RefModule" "RefModule" 2 2;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 8 "in";
+    .port_info 2 /OUTPUT 8 "anyedge";
+v0x130f07c80_0 .var "anyedge", 7 0;
+o0x138040040 .functor BUFZ 1, C4<z>; HiZ drive
+v0x130f17c50_0 .net "clk", 0 0, o0x138040040;  0 drivers
+v0x130f17cf0_0 .var "d_last", 7 0;
+o0x1380400a0 .functor BUFZ 8, C4<zzzzzzzz>; HiZ drive
+v0x130f17d90_0 .net "in", 7 0, o0x1380400a0;  0 drivers
+E_0x130f05dc0 .event posedge, v0x130f17c50_0;
+    .scope S_0x130f05700;
+T_0 ;
+    %wait E_0x130f05dc0;
+    %load/vec4 v0x130f17d90_0;
+    %assign/vec4 v0x130f17cf0_0, 0;
+    %load/vec4 v0x130f17d90_0;
+    %load/vec4 v0x130f17cf0_0;
+    %xor;
+    %assign/vec4 v0x130f07c80_0, 0;
+    %jmp T_0;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "./dataset-colon-out/Prob045_edgedetect2_ref.sv";

@@ -1,0 +1,68 @@
+#! /opt/homebrew/Cellar/icarus-verilog/12.0/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/va_math.vpi";
+S_0x126e075e0 .scope module, "RefModule" "RefModule" 2 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /INPUT 4 "state";
+    .port_info 2 /OUTPUT 4 "next_state";
+    .port_info 3 /OUTPUT 1 "out";
+P_0x126e07750 .param/l "A" 0 2 8, +C4<00000000000000000000000000000000>;
+P_0x126e07790 .param/l "B" 0 2 8, +C4<00000000000000000000000000000001>;
+P_0x126e077d0 .param/l "C" 0 2 8, +C4<00000000000000000000000000000010>;
+P_0x126e07810 .param/l "D" 0 2 8, +C4<00000000000000000000000000000011>;
+L_0x126e20e70 .functor OR 1, L_0x126e20d30, L_0x126e20dd0, C4<0>, C4<0>;
+o0x128040370 .functor BUFZ 1, C4<z>; HiZ drive
+L_0x126e20f80 .functor NOT 1, o0x128040370, C4<0>, C4<0>, C4<0>;
+L_0x126e20ff0 .functor AND 1, L_0x126e20e70, L_0x126e20f80, C4<1>, C4<1>;
+L_0x126e21320 .functor OR 1, L_0x126e21120, L_0x126e211e0, C4<0>, C4<0>;
+L_0x126e214c0 .functor OR 1, L_0x126e21320, L_0x126e213f0, C4<0>, C4<0>;
+L_0x126e215e0 .functor AND 1, L_0x126e214c0, o0x128040370, C4<1>, C4<1>;
+L_0x126e21850 .functor OR 1, L_0x126e216d0, L_0x126e21770, C4<0>, C4<0>;
+L_0x126e219a0 .functor NOT 1, o0x128040370, C4<0>, C4<0>, C4<0>;
+L_0x126e21a10 .functor AND 1, L_0x126e21850, L_0x126e219a0, C4<1>, C4<1>;
+L_0x126e212a0 .functor AND 1, L_0x126e21c70, o0x128040370, C4<1>, C4<1>;
+v0x126e07850_0 .net *"_ivl_10", 0 0, L_0x126e20ff0;  1 drivers
+v0x126e1fd30_0 .net *"_ivl_15", 0 0, L_0x126e21120;  1 drivers
+v0x126e1fdd0_0 .net *"_ivl_17", 0 0, L_0x126e211e0;  1 drivers
+v0x126e1fe80_0 .net *"_ivl_18", 0 0, L_0x126e21320;  1 drivers
+v0x126e1ff30_0 .net *"_ivl_21", 0 0, L_0x126e213f0;  1 drivers
+v0x126e20020_0 .net *"_ivl_22", 0 0, L_0x126e214c0;  1 drivers
+v0x126e200d0_0 .net *"_ivl_24", 0 0, L_0x126e215e0;  1 drivers
+v0x126e20180_0 .net *"_ivl_29", 0 0, L_0x126e216d0;  1 drivers
+v0x126e20230_0 .net *"_ivl_3", 0 0, L_0x126e20d30;  1 drivers
+v0x126e20340_0 .net *"_ivl_31", 0 0, L_0x126e21770;  1 drivers
+v0x126e203f0_0 .net *"_ivl_32", 0 0, L_0x126e21850;  1 drivers
+v0x126e204a0_0 .net *"_ivl_34", 0 0, L_0x126e219a0;  1 drivers
+v0x126e20550_0 .net *"_ivl_36", 0 0, L_0x126e21a10;  1 drivers
+v0x126e20600_0 .net *"_ivl_42", 0 0, L_0x126e21c70;  1 drivers
+v0x126e206b0_0 .net *"_ivl_43", 0 0, L_0x126e212a0;  1 drivers
+v0x126e20760_0 .net *"_ivl_5", 0 0, L_0x126e20dd0;  1 drivers
+v0x126e20810_0 .net *"_ivl_6", 0 0, L_0x126e20e70;  1 drivers
+v0x126e209a0_0 .net *"_ivl_8", 0 0, L_0x126e20f80;  1 drivers
+v0x126e20a30_0 .net "in", 0 0, o0x128040370;  0 drivers
+v0x126e20ad0_0 .net "next_state", 3 0, L_0x126e21b50;  1 drivers
+v0x126e20b80_0 .net "out", 0 0, L_0x126e21f20;  1 drivers
+o0x128040400 .functor BUFZ 4, C4<zzzz>; HiZ drive
+v0x126e20c20_0 .net "state", 3 0, o0x128040400;  0 drivers
+L_0x126e20d30 .part o0x128040400, 0, 1;
+L_0x126e20dd0 .part o0x128040400, 2, 1;
+L_0x126e21120 .part o0x128040400, 0, 1;
+L_0x126e211e0 .part o0x128040400, 1, 1;
+L_0x126e213f0 .part o0x128040400, 3, 1;
+L_0x126e216d0 .part o0x128040400, 1, 1;
+L_0x126e21770 .part o0x128040400, 3, 1;
+L_0x126e21b50 .concat8 [ 1 1 1 1], L_0x126e20ff0, L_0x126e215e0, L_0x126e21a10, L_0x126e212a0;
+L_0x126e21c70 .part o0x128040400, 2, 1;
+L_0x126e21f20 .part o0x128040400, 3, 1;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "./dataset-colon-out/Prob079_fsm3onehot_ref.sv";

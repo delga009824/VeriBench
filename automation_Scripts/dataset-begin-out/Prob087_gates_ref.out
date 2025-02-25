@@ -1,0 +1,49 @@
+#! /opt/homebrew/Cellar/icarus-verilog/12.0/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/va_math.vpi";
+S_0x13a005610 .scope module, "RefModule" "RefModule" 2 2;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "out_and";
+    .port_info 3 /OUTPUT 1 "out_or";
+    .port_info 4 /OUTPUT 1 "out_xor";
+    .port_info 5 /OUTPUT 1 "out_nand";
+    .port_info 6 /OUTPUT 1 "out_nor";
+    .port_info 7 /OUTPUT 1 "out_xnor";
+    .port_info 8 /OUTPUT 1 "out_anotb";
+o0x1400400a0 .functor BUFZ 1, C4<z>; HiZ drive
+o0x1400400d0 .functor BUFZ 1, C4<z>; HiZ drive
+L_0x13a01b180 .functor AND 1, o0x1400400a0, o0x1400400d0, C4<1>, C4<1>;
+L_0x13a01b1f0 .functor OR 1, o0x1400400a0, o0x1400400d0, C4<0>, C4<0>;
+L_0x13a01b320 .functor XOR 1, o0x1400400a0, o0x1400400d0, C4<0>, C4<0>;
+L_0x13a01b3b0 .functor AND 1, o0x1400400a0, o0x1400400d0, C4<1>, C4<1>;
+L_0x13a01b560 .functor NOT 1, L_0x13a01b3b0, C4<0>, C4<0>, C4<0>;
+L_0x13a01b600 .functor OR 1, o0x1400400a0, o0x1400400d0, C4<0>, C4<0>;
+L_0x13a01b670 .functor NOT 1, L_0x13a01b600, C4<0>, C4<0>, C4<0>;
+L_0x13a01b760 .functor XNOR 1, o0x1400400a0, o0x1400400d0, C4<0>, C4<0>;
+L_0x13a01b7d0 .functor NOT 1, o0x1400400d0, C4<0>, C4<0>, C4<0>;
+L_0x13a01b890 .functor AND 1, o0x1400400a0, L_0x13a01b7d0, C4<1>, C4<1>;
+v0x13a0096f0_0 .net *"_ivl_10", 0 0, L_0x13a01b600;  1 drivers
+v0x13a01a910_0 .net *"_ivl_16", 0 0, L_0x13a01b7d0;  1 drivers
+v0x13a01a9b0_0 .net *"_ivl_6", 0 0, L_0x13a01b3b0;  1 drivers
+v0x13a01aa60_0 .net "a", 0 0, o0x1400400a0;  0 drivers
+v0x13a01ab00_0 .net "b", 0 0, o0x1400400d0;  0 drivers
+v0x13a01abe0_0 .net "out_and", 0 0, L_0x13a01b180;  1 drivers
+v0x13a01ac80_0 .net "out_anotb", 0 0, L_0x13a01b890;  1 drivers
+v0x13a01ad20_0 .net "out_nand", 0 0, L_0x13a01b560;  1 drivers
+v0x13a01adc0_0 .net "out_nor", 0 0, L_0x13a01b670;  1 drivers
+v0x13a01aed0_0 .net "out_or", 0 0, L_0x13a01b1f0;  1 drivers
+v0x13a01af60_0 .net "out_xnor", 0 0, L_0x13a01b760;  1 drivers
+v0x13a01b000_0 .net "out_xor", 0 0, L_0x13a01b320;  1 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "./dataset-begin-out/Prob087_gates_ref.sv";

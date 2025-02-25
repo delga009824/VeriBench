@@ -1,0 +1,47 @@
+#! /opt/homebrew/Cellar/icarus-verilog/12.0/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/va_math.vpi";
+S_0x1396076e0 .scope module, "RefModule" "RefModule" 2 2;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /INPUT 1 "cin";
+    .port_info 3 /OUTPUT 1 "cout";
+    .port_info 4 /OUTPUT 1 "sum";
+L_0x140078058 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x13960b340_0 .net *"_ivl_10", 0 0, L_0x140078058;  1 drivers
+v0x13961b240_0 .net *"_ivl_11", 1 0, L_0x13961bf60;  1 drivers
+v0x13961b2e0_0 .net *"_ivl_13", 1 0, L_0x13961c0d0;  1 drivers
+L_0x1400780a0 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x13961b390_0 .net *"_ivl_16", 0 0, L_0x1400780a0;  1 drivers
+v0x13961b440_0 .net *"_ivl_17", 1 0, L_0x13961c1b0;  1 drivers
+v0x13961b530_0 .net *"_ivl_3", 1 0, L_0x13961bcc0;  1 drivers
+L_0x140078010 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x13961b5e0_0 .net *"_ivl_6", 0 0, L_0x140078010;  1 drivers
+v0x13961b690_0 .net *"_ivl_7", 1 0, L_0x13961be20;  1 drivers
+o0x140040190 .functor BUFZ 1, C4<z>; HiZ drive
+v0x13961b740_0 .net "a", 0 0, o0x140040190;  0 drivers
+o0x1400401c0 .functor BUFZ 1, C4<z>; HiZ drive
+v0x13961b850_0 .net "b", 0 0, o0x1400401c0;  0 drivers
+o0x1400401f0 .functor BUFZ 1, C4<z>; HiZ drive
+v0x13961b8e0_0 .net "cin", 0 0, o0x1400401f0;  0 drivers
+v0x13961b980_0 .net "cout", 0 0, L_0x13961bb40;  1 drivers
+v0x13961ba20_0 .net "sum", 0 0, L_0x13961bbe0;  1 drivers
+L_0x13961bb40 .part L_0x13961c1b0, 1, 1;
+L_0x13961bbe0 .part L_0x13961c1b0, 0, 1;
+L_0x13961bcc0 .concat [ 1 1 0 0], o0x140040190, L_0x140078010;
+L_0x13961be20 .concat [ 1 1 0 0], o0x1400401c0, L_0x140078058;
+L_0x13961bf60 .arith/sum 2, L_0x13961bcc0, L_0x13961be20;
+L_0x13961c0d0 .concat [ 1 1 0 0], o0x1400401f0, L_0x1400780a0;
+L_0x13961c1b0 .arith/sum 2, L_0x13961bf60, L_0x13961c0d0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "./dataset_spec-to-rtl/Prob027_fadd_ref.sv";

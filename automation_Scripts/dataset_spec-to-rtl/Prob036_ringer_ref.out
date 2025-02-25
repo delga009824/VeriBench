@@ -1,0 +1,30 @@
+#! /opt/homebrew/Cellar/icarus-verilog/12.0/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/va_math.vpi";
+S_0x159e075e0 .scope module, "RefModule" "RefModule" 2 2;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "ring";
+    .port_info 1 /INPUT 1 "vibrate_mode";
+    .port_info 2 /OUTPUT 1 "ringer";
+    .port_info 3 /OUTPUT 1 "motor";
+o0x1500400d0 .functor BUFZ 1, C4<z>; HiZ drive
+L_0x159e19cd0 .functor NOT 1, o0x1500400d0, C4<0>, C4<0>, C4<0>;
+o0x150040070 .functor BUFZ 1, C4<z>; HiZ drive
+L_0x159e19d70 .functor AND 1, o0x150040070, L_0x159e19cd0, C4<1>, C4<1>;
+L_0x159e19e80 .functor AND 1, o0x150040070, o0x1500400d0, C4<1>, C4<1>;
+v0x159e09500_0 .net *"_ivl_0", 0 0, L_0x159e19cd0;  1 drivers
+v0x159e199e0_0 .net "motor", 0 0, L_0x159e19e80;  1 drivers
+v0x159e19a80_0 .net "ring", 0 0, o0x150040070;  0 drivers
+v0x159e19b10_0 .net "ringer", 0 0, L_0x159e19d70;  1 drivers
+v0x159e19bb0_0 .net "vibrate_mode", 0 0, o0x1500400d0;  0 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "./dataset_spec-to-rtl/Prob036_ringer_ref.sv";

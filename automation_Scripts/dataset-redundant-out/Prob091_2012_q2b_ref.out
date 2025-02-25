@@ -1,0 +1,46 @@
+#! /opt/homebrew/Cellar/icarus-verilog/12.0/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/va_math.vpi";
+S_0x149e075f0 .scope module, "RefModule" "RefModule" 2 2;
+ .timescale 0 0;
+    .port_info 0 /INPUT 6 "y";
+    .port_info 1 /INPUT 1 "w";
+    .port_info 2 /OUTPUT 1 "Y1";
+    .port_info 3 /OUTPUT 1 "Y3";
+o0x150040220 .functor BUFZ 1, C4<z>; HiZ drive
+L_0x149e1c920 .functor AND 1, L_0x149e1c880, o0x150040220, C4<1>, C4<1>;
+L_0x149e1cbb0 .functor OR 1, L_0x149e1c9f0, L_0x149e1caf0, C4<0>, C4<0>;
+L_0x149e1ce00 .functor OR 1, L_0x149e1cbb0, L_0x149e1cce0, C4<0>, C4<0>;
+L_0x149e1cfa0 .functor OR 1, L_0x149e1ce00, L_0x149e1ced0, C4<0>, C4<0>;
+L_0x149e1d0b0 .functor NOT 1, o0x150040220, C4<0>, C4<0>, C4<0>;
+L_0x149e1d190 .functor AND 1, L_0x149e1cfa0, L_0x149e1d0b0, C4<1>, C4<1>;
+v0x149e09c90_0 .net "Y1", 0 0, L_0x149e1c920;  1 drivers
+v0x149e1bf70_0 .net "Y3", 0 0, L_0x149e1d190;  1 drivers
+v0x149e1c010_0 .net *"_ivl_1", 0 0, L_0x149e1c880;  1 drivers
+v0x149e1c0b0_0 .net *"_ivl_11", 0 0, L_0x149e1cce0;  1 drivers
+v0x149e1c160_0 .net *"_ivl_12", 0 0, L_0x149e1ce00;  1 drivers
+v0x149e1c250_0 .net *"_ivl_15", 0 0, L_0x149e1ced0;  1 drivers
+v0x149e1c300_0 .net *"_ivl_16", 0 0, L_0x149e1cfa0;  1 drivers
+v0x149e1c3b0_0 .net *"_ivl_18", 0 0, L_0x149e1d0b0;  1 drivers
+v0x149e1c460_0 .net *"_ivl_5", 0 0, L_0x149e1c9f0;  1 drivers
+v0x149e1c570_0 .net *"_ivl_7", 0 0, L_0x149e1caf0;  1 drivers
+v0x149e1c620_0 .net *"_ivl_8", 0 0, L_0x149e1cbb0;  1 drivers
+v0x149e1c6d0_0 .net "w", 0 0, o0x150040220;  0 drivers
+o0x150040250 .functor BUFZ 6, C4<zzzzzz>; HiZ drive
+v0x149e1c770_0 .net "y", 5 0, o0x150040250;  0 drivers
+L_0x149e1c880 .part o0x150040250, 0, 1;
+L_0x149e1c9f0 .part o0x150040250, 1, 1;
+L_0x149e1caf0 .part o0x150040250, 2, 1;
+L_0x149e1cce0 .part o0x150040250, 4, 1;
+L_0x149e1ced0 .part o0x150040250, 5, 1;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "./dataset-redundant-out/Prob091_2012_q2b_ref.sv";

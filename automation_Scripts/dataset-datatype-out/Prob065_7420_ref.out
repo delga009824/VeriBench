@@ -1,0 +1,50 @@
+#! /opt/homebrew/Cellar/icarus-verilog/12.0/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/va_math.vpi";
+S_0x141e0b0d0 .scope module, "RefModule" "RefModule" 2 2;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "p1a";
+    .port_info 1 /INPUT 1 "p1b";
+    .port_info 2 /INPUT 1 "p1c";
+    .port_info 3 /INPUT 1 "p1d";
+    .port_info 4 /OUTPUT 1 "p1y";
+    .port_info 5 /INPUT 1 "p2a";
+    .port_info 6 /INPUT 1 "p2b";
+    .port_info 7 /INPUT 1 "p2c";
+    .port_info 8 /INPUT 1 "p2d";
+    .port_info 9 /OUTPUT 1 "p2y";
+v0x141e08c90_0 .net *"_ivl_0", 3 0, L_0x141e1bf90;  1 drivers
+v0x141e1b720_0 .net *"_ivl_4", 3 0, L_0x141e1c170;  1 drivers
+o0x148040070 .functor BUFZ 1, C4<z>; HiZ drive
+v0x141e1b7c0_0 .net "p1a", 0 0, o0x148040070;  0 drivers
+o0x1480400a0 .functor BUFZ 1, C4<z>; HiZ drive
+v0x141e1b870_0 .net "p1b", 0 0, o0x1480400a0;  0 drivers
+o0x1480400d0 .functor BUFZ 1, C4<z>; HiZ drive
+v0x141e1b900_0 .net "p1c", 0 0, o0x1480400d0;  0 drivers
+o0x148040100 .functor BUFZ 1, C4<z>; HiZ drive
+v0x141e1b9e0_0 .net "p1d", 0 0, o0x148040100;  0 drivers
+v0x141e1ba80_0 .net "p1y", 0 0, L_0x141e1c070;  1 drivers
+o0x148040160 .functor BUFZ 1, C4<z>; HiZ drive
+v0x141e1bb20_0 .net "p2a", 0 0, o0x148040160;  0 drivers
+o0x148040190 .functor BUFZ 1, C4<z>; HiZ drive
+v0x141e1bbc0_0 .net "p2b", 0 0, o0x148040190;  0 drivers
+o0x1480401c0 .functor BUFZ 1, C4<z>; HiZ drive
+v0x141e1bcd0_0 .net "p2c", 0 0, o0x1480401c0;  0 drivers
+o0x1480401f0 .functor BUFZ 1, C4<z>; HiZ drive
+v0x141e1bd60_0 .net "p2d", 0 0, o0x1480401f0;  0 drivers
+v0x141e1be00_0 .net "p2y", 0 0, L_0x141e1c2a0;  1 drivers
+L_0x141e1bf90 .concat [ 1 1 1 1], o0x148040100, o0x1480400d0, o0x1480400a0, o0x148040070;
+L_0x141e1c070 .reduce/nand L_0x141e1bf90;
+L_0x141e1c170 .concat [ 1 1 1 1], o0x1480401f0, o0x1480401c0, o0x148040190, o0x148040160;
+L_0x141e1c2a0 .reduce/nand L_0x141e1c170;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "./dataset-datatype-out/Prob065_7420_ref.sv";

@@ -1,0 +1,71 @@
+#! /opt/homebrew/Cellar/icarus-verilog/12.0/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/va_math.vpi";
+S_0x15b607650 .scope module, "RefModule" "RefModule" 2 2;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /INPUT 1 "c";
+    .port_info 3 /INPUT 1 "d";
+    .port_info 4 /INPUT 1 "e";
+    .port_info 5 /OUTPUT 25 "out";
+L_0x15b61de80 .functor NOT 25, L_0x15b61dca0, C4<0000000000000000000000000>, C4<0000000000000000000000000>, C4<0000000000000000000000000>;
+L_0x15b61daa0 .functor XOR 25, L_0x15b61de80, L_0x15b61df30, C4<0000000000000000000000000>, C4<0000000000000000000000000>;
+v0x15b607850_0 .net *"_ivl_0", 4 0, L_0x15b61d530;  1 drivers
+v0x15b61cb70_0 .net *"_ivl_10", 24 0, L_0x15b61dca0;  1 drivers
+v0x15b61cc10_0 .net *"_ivl_12", 24 0, L_0x15b61de80;  1 drivers
+v0x15b61ccc0_0 .net *"_ivl_14", 24 0, L_0x15b61df30;  1 drivers
+v0x15b61cd70_0 .net *"_ivl_2", 4 0, L_0x15b61d690;  1 drivers
+v0x15b61ce60_0 .net *"_ivl_4", 4 0, L_0x15b61d820;  1 drivers
+v0x15b61cf10_0 .net *"_ivl_6", 4 0, L_0x15b61d9a0;  1 drivers
+v0x15b61cfc0_0 .net *"_ivl_8", 4 0, L_0x15b61db20;  1 drivers
+o0x160040190 .functor BUFZ 1, C4<z>; HiZ drive
+v0x15b61d070_0 .net "a", 0 0, o0x160040190;  0 drivers
+o0x1600401c0 .functor BUFZ 1, C4<z>; HiZ drive
+v0x15b61d180_0 .net "b", 0 0, o0x1600401c0;  0 drivers
+o0x1600401f0 .functor BUFZ 1, C4<z>; HiZ drive
+v0x15b61d210_0 .net "c", 0 0, o0x1600401f0;  0 drivers
+o0x160040220 .functor BUFZ 1, C4<z>; HiZ drive
+v0x15b61d2b0_0 .net "d", 0 0, o0x160040220;  0 drivers
+o0x160040250 .functor BUFZ 1, C4<z>; HiZ drive
+v0x15b61d350_0 .net "e", 0 0, o0x160040250;  0 drivers
+v0x15b61d3f0_0 .net "out", 24 0, L_0x15b61daa0;  1 drivers
+LS_0x15b61d530_0_0 .concat [ 1 1 1 1], o0x160040190, o0x160040190, o0x160040190, o0x160040190;
+LS_0x15b61d530_0_4 .concat [ 1 0 0 0], o0x160040190;
+L_0x15b61d530 .concat [ 4 1 0 0], LS_0x15b61d530_0_0, LS_0x15b61d530_0_4;
+LS_0x15b61d690_0_0 .concat [ 1 1 1 1], o0x1600401c0, o0x1600401c0, o0x1600401c0, o0x1600401c0;
+LS_0x15b61d690_0_4 .concat [ 1 0 0 0], o0x1600401c0;
+L_0x15b61d690 .concat [ 4 1 0 0], LS_0x15b61d690_0_0, LS_0x15b61d690_0_4;
+LS_0x15b61d820_0_0 .concat [ 1 1 1 1], o0x1600401f0, o0x1600401f0, o0x1600401f0, o0x1600401f0;
+LS_0x15b61d820_0_4 .concat [ 1 0 0 0], o0x1600401f0;
+L_0x15b61d820 .concat [ 4 1 0 0], LS_0x15b61d820_0_0, LS_0x15b61d820_0_4;
+LS_0x15b61d9a0_0_0 .concat [ 1 1 1 1], o0x160040220, o0x160040220, o0x160040220, o0x160040220;
+LS_0x15b61d9a0_0_4 .concat [ 1 0 0 0], o0x160040220;
+L_0x15b61d9a0 .concat [ 4 1 0 0], LS_0x15b61d9a0_0_0, LS_0x15b61d9a0_0_4;
+LS_0x15b61db20_0_0 .concat [ 1 1 1 1], o0x160040250, o0x160040250, o0x160040250, o0x160040250;
+LS_0x15b61db20_0_4 .concat [ 1 0 0 0], o0x160040250;
+L_0x15b61db20 .concat [ 4 1 0 0], LS_0x15b61db20_0_0, LS_0x15b61db20_0_4;
+LS_0x15b61dca0_0_0 .concat [ 5 5 5 5], L_0x15b61db20, L_0x15b61d9a0, L_0x15b61d820, L_0x15b61d690;
+LS_0x15b61dca0_0_4 .concat [ 5 0 0 0], L_0x15b61d530;
+L_0x15b61dca0 .concat [ 20 5 0 0], LS_0x15b61dca0_0_0, LS_0x15b61dca0_0_4;
+LS_0x15b61df30_0_0 .concat [ 1 1 1 1], o0x160040250, o0x160040220, o0x1600401f0, o0x1600401c0;
+LS_0x15b61df30_0_4 .concat [ 1 1 1 1], o0x160040190, o0x160040250, o0x160040220, o0x1600401f0;
+LS_0x15b61df30_0_8 .concat [ 1 1 1 1], o0x1600401c0, o0x160040190, o0x160040250, o0x160040220;
+LS_0x15b61df30_0_12 .concat [ 1 1 1 1], o0x1600401f0, o0x1600401c0, o0x160040190, o0x160040250;
+LS_0x15b61df30_0_16 .concat [ 1 1 1 1], o0x160040220, o0x1600401f0, o0x1600401c0, o0x160040190;
+LS_0x15b61df30_0_20 .concat [ 1 1 1 1], o0x160040250, o0x160040220, o0x1600401f0, o0x1600401c0;
+LS_0x15b61df30_0_24 .concat [ 1 0 0 0], o0x160040190;
+LS_0x15b61df30_1_0 .concat [ 4 4 4 4], LS_0x15b61df30_0_0, LS_0x15b61df30_0_4, LS_0x15b61df30_0_8, LS_0x15b61df30_0_12;
+LS_0x15b61df30_1_4 .concat [ 4 4 1 0], LS_0x15b61df30_0_16, LS_0x15b61df30_0_20, LS_0x15b61df30_0_24;
+L_0x15b61df30 .concat [ 16 9 0 0], LS_0x15b61df30_1_0, LS_0x15b61df30_1_4;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "./dataset-string-out/Prob043_vector5_ref.sv";

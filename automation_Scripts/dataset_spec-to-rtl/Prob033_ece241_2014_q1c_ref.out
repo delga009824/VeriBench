@@ -1,0 +1,52 @@
+#! /opt/homebrew/Cellar/icarus-verilog/12.0/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/va_math.vpi";
+S_0x13c80a9a0 .scope module, "RefModule" "RefModule" 2 2;
+ .timescale 0 0;
+    .port_info 0 /INPUT 8 "a";
+    .port_info 1 /INPUT 8 "b";
+    .port_info 2 /OUTPUT 8 "s";
+    .port_info 3 /OUTPUT 1 "overflow";
+L_0x13c81b900 .functor XOR 1, L_0x13c81b710, L_0x13c81b820, C4<0>, C4<0>;
+L_0x13c81bce0 .functor XOR 1, L_0x13c81bb10, L_0x13c81bbb0, C4<0>, C4<0>;
+L_0x13c81bd50 .functor AND 1, L_0x13c81b9f0, L_0x13c81bce0, C4<1>, C4<1>;
+v0x13c808640_0 .net *"_ivl_0", 8 0, L_0x13c81b2b0;  1 drivers
+v0x13c81a7a0_0 .net *"_ivl_13", 0 0, L_0x13c81b710;  1 drivers
+v0x13c81a840_0 .net *"_ivl_15", 0 0, L_0x13c81b820;  1 drivers
+v0x13c81a8f0_0 .net *"_ivl_16", 0 0, L_0x13c81b900;  1 drivers
+v0x13c81a9a0_0 .net *"_ivl_19", 0 0, L_0x13c81b9f0;  1 drivers
+v0x13c81aa80_0 .net *"_ivl_21", 0 0, L_0x13c81bb10;  1 drivers
+v0x13c81ab30_0 .net *"_ivl_23", 0 0, L_0x13c81bbb0;  1 drivers
+v0x13c81abe0_0 .net *"_ivl_24", 0 0, L_0x13c81bce0;  1 drivers
+L_0x130068010 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x13c81ac80_0 .net *"_ivl_3", 0 0, L_0x130068010;  1 drivers
+v0x13c81ad90_0 .net *"_ivl_4", 8 0, L_0x13c81b3b0;  1 drivers
+L_0x130068058 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x13c81ae40_0 .net *"_ivl_7", 0 0, L_0x130068058;  1 drivers
+o0x130030220 .functor BUFZ 8, C4<zzzzzzzz>; HiZ drive
+v0x13c81aef0_0 .net "a", 7 0, o0x130030220;  0 drivers
+o0x130030250 .functor BUFZ 8, C4<zzzzzzzz>; HiZ drive
+v0x13c81afa0_0 .net "b", 7 0, o0x130030250;  0 drivers
+v0x13c81b050_0 .net "overflow", 0 0, L_0x13c81bd50;  1 drivers
+v0x13c81b0f0_0 .net "s", 7 0, L_0x13c81b630;  1 drivers
+v0x13c81b1a0_0 .net "sum", 8 0, L_0x13c81b4f0;  1 drivers
+L_0x13c81b2b0 .concat [ 8 1 0 0], o0x130030220, L_0x130068010;
+L_0x13c81b3b0 .concat [ 8 1 0 0], o0x130030250, L_0x130068058;
+L_0x13c81b4f0 .arith/sum 9, L_0x13c81b2b0, L_0x13c81b3b0;
+L_0x13c81b630 .part L_0x13c81b4f0, 0, 8;
+L_0x13c81b710 .part o0x130030220, 7, 1;
+L_0x13c81b820 .part o0x130030250, 7, 1;
+L_0x13c81b9f0 .reduce/nor L_0x13c81b900;
+L_0x13c81bb10 .part o0x130030220, 7, 1;
+L_0x13c81bbb0 .part L_0x13c81b630, 7, 1;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "./dataset_spec-to-rtl/Prob033_ece241_2014_q1c_ref.sv";

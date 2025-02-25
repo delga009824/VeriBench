@@ -1,0 +1,72 @@
+#! /opt/homebrew/Cellar/icarus-verilog/12.0/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/va_math.vpi";
+S_0x1207055e0 .scope module, "RefModule" "RefModule" 2 2;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /INPUT 1 "c";
+    .port_info 3 /INPUT 1 "d";
+    .port_info 4 /OUTPUT 1 "out_sop";
+    .port_info 5 /OUTPUT 1 "out_pos";
+o0x1280403a0 .functor BUFZ 1, C4<z>; HiZ drive
+o0x1280403d0 .functor BUFZ 1, C4<z>; HiZ drive
+L_0x12071d200 .functor AND 1, o0x1280403a0, o0x1280403d0, C4<1>, C4<1>;
+o0x128040340 .functor BUFZ 1, C4<z>; HiZ drive
+L_0x12071dea0 .functor NOT 1, o0x128040340, C4<0>, C4<0>, C4<0>;
+o0x128040370 .functor BUFZ 1, C4<z>; HiZ drive
+L_0x12071df50 .functor NOT 1, o0x128040370, C4<0>, C4<0>, C4<0>;
+L_0x12071e020 .functor AND 1, L_0x12071dea0, L_0x12071df50, C4<1>, C4<1>;
+L_0x12071e150 .functor AND 1, L_0x12071e020, o0x1280403a0, C4<1>, C4<1>;
+L_0x12071e270 .functor OR 1, L_0x12071d200, L_0x12071e150, C4<0>, C4<0>;
+L_0x12071e360 .functor NOT 1, o0x128040370, C4<0>, C4<0>, C4<0>;
+L_0x12071e450 .functor OR 1, L_0x12071e360, o0x1280403d0, C4<0>, C4<0>;
+L_0x12071e540 .functor AND 1, o0x1280403a0, L_0x12071e450, C4<1>, C4<1>;
+L_0x12071e640 .functor NOT 1, o0x128040340, C4<0>, C4<0>, C4<0>;
+L_0x12071e6b0 .functor OR 1, L_0x12071e640, o0x128040370, C4<0>, C4<0>;
+L_0x12071e7c0 .functor AND 1, L_0x12071e540, L_0x12071e6b0, C4<1>, C4<1>;
+L_0x12071e870 .functor NOT 1, o0x128040370, C4<0>, C4<0>, C4<0>;
+L_0x12071e9d0 .functor OR 1, L_0x12071e870, o0x1280403d0, C4<0>, C4<0>;
+L_0x12071ea40 .functor AND 1, o0x1280403a0, L_0x12071e9d0, C4<1>, C4<1>;
+L_0x12071e960 .functor NOT 1, o0x128040340, C4<0>, C4<0>, C4<0>;
+L_0x12071ebb0 .functor OR 1, L_0x12071e960, o0x1280403d0, C4<0>, C4<0>;
+L_0x12071ed70 .functor AND 1, L_0x12071ea40, L_0x12071ebb0, C4<1>, C4<1>;
+L_0x12071ede0 .functor XNOR 1, L_0x12071e7c0, L_0x12071ed70, C4<0>, C4<0>;
+v0x12070c5e0_0 .net *"_ivl_0", 0 0, L_0x12071d200;  1 drivers
+v0x12071cc70_0 .net *"_ivl_12", 0 0, L_0x12071e360;  1 drivers
+v0x12071cd10_0 .net *"_ivl_14", 0 0, L_0x12071e450;  1 drivers
+v0x12071cdc0_0 .net *"_ivl_16", 0 0, L_0x12071e540;  1 drivers
+v0x12071ce70_0 .net *"_ivl_18", 0 0, L_0x12071e640;  1 drivers
+v0x12071cf60_0 .net *"_ivl_2", 0 0, L_0x12071dea0;  1 drivers
+v0x12071d010_0 .net *"_ivl_20", 0 0, L_0x12071e6b0;  1 drivers
+v0x12071d0c0_0 .net *"_ivl_24", 0 0, L_0x12071e870;  1 drivers
+v0x12071d170_0 .net *"_ivl_26", 0 0, L_0x12071e9d0;  1 drivers
+v0x12071d280_0 .net *"_ivl_28", 0 0, L_0x12071ea40;  1 drivers
+v0x12071d330_0 .net *"_ivl_30", 0 0, L_0x12071e960;  1 drivers
+v0x12071d3e0_0 .net *"_ivl_32", 0 0, L_0x12071ebb0;  1 drivers
+v0x12071d490_0 .net *"_ivl_36", 0 0, L_0x12071ede0;  1 drivers
+L_0x128078010 .functor BUFT 1, C4<x>, C4<0>, C4<0>, C4<0>;
+v0x12071d530_0 .net *"_ivl_38", 0 0, L_0x128078010;  1 drivers
+v0x12071d5e0_0 .net *"_ivl_4", 0 0, L_0x12071df50;  1 drivers
+v0x12071d690_0 .net *"_ivl_6", 0 0, L_0x12071e020;  1 drivers
+v0x12071d740_0 .net *"_ivl_8", 0 0, L_0x12071e150;  1 drivers
+v0x12071d8d0_0 .net "a", 0 0, o0x128040340;  0 drivers
+v0x12071d960_0 .net "b", 0 0, o0x128040370;  0 drivers
+v0x12071d9f0_0 .net "c", 0 0, o0x1280403a0;  0 drivers
+v0x12071da90_0 .net "d", 0 0, o0x1280403d0;  0 drivers
+v0x12071db30_0 .net "out_pos", 0 0, L_0x12071ef70;  1 drivers
+v0x12071dbd0_0 .net "out_sop", 0 0, L_0x12071e270;  1 drivers
+v0x12071dc70_0 .net "pos0", 0 0, L_0x12071e7c0;  1 drivers
+v0x12071dd10_0 .net "pos1", 0 0, L_0x12071ed70;  1 drivers
+L_0x12071ef70 .functor MUXZ 1, L_0x128078010, L_0x12071e7c0, L_0x12071ede0, C4<>;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "./dataset-backtick-out/Prob070_ece241_2013_q2_ref.sv";

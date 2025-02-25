@@ -1,0 +1,50 @@
+#! /opt/homebrew/Cellar/icarus-verilog/12.0/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/va_math.vpi";
+S_0x13af05590 .scope module, "RefModule" "RefModule" 2 2;
+ .timescale 0 0;
+    .port_info 0 /INPUT 100 "in";
+    .port_info 1 /OUTPUT 100 "out_both";
+    .port_info 2 /OUTPUT 100 "out_any";
+    .port_info 3 /OUTPUT 100 "out_different";
+L_0x13af1baf0 .functor AND 99, L_0x13af1b950, L_0x13af1b9f0, C4<111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111>, C4<111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111>;
+L_0x13af1bf30 .functor OR 99, L_0x13af1bd20, L_0x13af1bdc0, C4<000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000>, C4<000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000>;
+o0x140040220 .functor BUFZ 100, C4<zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz>; HiZ drive
+L_0x13af1c430 .functor XOR 100, o0x140040220, L_0x13af1c2a0, C4<0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000>, C4<0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000>;
+L_0x140078010 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x13af0afd0_0 .net/2u *"_ivl_0", 0 0, L_0x140078010;  1 drivers
+v0x13af1aec0_0 .net *"_ivl_11", 98 0, L_0x13af1bd20;  1 drivers
+v0x13af1af60_0 .net *"_ivl_13", 98 0, L_0x13af1bdc0;  1 drivers
+v0x13af1b010_0 .net *"_ivl_14", 98 0, L_0x13af1bf30;  1 drivers
+L_0x140078058 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x13af1b0c0_0 .net/2u *"_ivl_16", 0 0, L_0x140078058;  1 drivers
+v0x13af1b1b0_0 .net *"_ivl_21", 0 0, L_0x13af1c120;  1 drivers
+v0x13af1b260_0 .net *"_ivl_23", 98 0, L_0x13af1c200;  1 drivers
+v0x13af1b310_0 .net *"_ivl_24", 99 0, L_0x13af1c2a0;  1 drivers
+v0x13af1b3c0_0 .net *"_ivl_3", 98 0, L_0x13af1b950;  1 drivers
+v0x13af1b4d0_0 .net *"_ivl_5", 98 0, L_0x13af1b9f0;  1 drivers
+v0x13af1b580_0 .net *"_ivl_6", 98 0, L_0x13af1baf0;  1 drivers
+v0x13af1b630_0 .net "in", 99 0, o0x140040220;  0 drivers
+v0x13af1b6e0_0 .net "out_any", 99 0, L_0x13af1bfe0;  1 drivers
+v0x13af1b790_0 .net "out_both", 99 0, L_0x13af1bc00;  1 drivers
+v0x13af1b840_0 .net "out_different", 99 0, L_0x13af1c430;  1 drivers
+L_0x13af1b950 .part o0x140040220, 0, 99;
+L_0x13af1b9f0 .part o0x140040220, 1, 99;
+L_0x13af1bc00 .concat [ 99 1 0 0], L_0x13af1baf0, L_0x140078010;
+L_0x13af1bd20 .part o0x140040220, 0, 99;
+L_0x13af1bdc0 .part o0x140040220, 1, 99;
+L_0x13af1bfe0 .concat [ 1 99 0 0], L_0x140078058, L_0x13af1bf30;
+L_0x13af1c120 .part o0x140040220, 0, 1;
+L_0x13af1c200 .part o0x140040220, 1, 99;
+L_0x13af1c2a0 .concat [ 99 1 0 0], L_0x13af1c200, L_0x13af1c120;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "./dataset-macro-out/Prob092_gatesv100_ref.sv";

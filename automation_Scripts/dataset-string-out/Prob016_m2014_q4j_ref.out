@@ -1,0 +1,33 @@
+#! /opt/homebrew/Cellar/icarus-verilog/12.0/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/va_math.vpi";
+S_0x14a705850 .scope module, "RefModule" "RefModule" 2 2;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "x";
+    .port_info 1 /INPUT 4 "y";
+    .port_info 2 /OUTPUT 5 "sum";
+v0x14a7059c0_0 .net *"_ivl_0", 4 0, L_0x14a7186a0;  1 drivers
+L_0x150078010 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x14a718220_0 .net *"_ivl_3", 0 0, L_0x150078010;  1 drivers
+v0x14a7182c0_0 .net *"_ivl_4", 4 0, L_0x14a7187e0;  1 drivers
+L_0x150078058 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x14a718370_0 .net *"_ivl_7", 0 0, L_0x150078058;  1 drivers
+v0x14a718420_0 .net "sum", 4 0, L_0x14a718920;  1 drivers
+o0x150040100 .functor BUFZ 4, C4<zzzz>; HiZ drive
+v0x14a718510_0 .net "x", 3 0, o0x150040100;  0 drivers
+o0x150040130 .functor BUFZ 4, C4<zzzz>; HiZ drive
+v0x14a7185c0_0 .net "y", 3 0, o0x150040130;  0 drivers
+L_0x14a7186a0 .concat [ 4 1 0 0], o0x150040100, L_0x150078010;
+L_0x14a7187e0 .concat [ 4 1 0 0], o0x150040130, L_0x150078058;
+L_0x14a718920 .arith/sum 5, L_0x14a7186a0, L_0x14a7187e0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "./dataset-string-out/Prob016_m2014_q4j_ref.sv";
