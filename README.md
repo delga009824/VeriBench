@@ -36,7 +36,9 @@ python error_insertion.py ./ground_truth ./output_folder --error_type missing_se
 ```
 
 --input: Path to the ground truth folder (e.g., ./ground_truth).
+
 --output: Path where the error-injected files will be saved.
+
 --error: Specific error type to inject (choose from one of the 25 unique error types).
 
 #### b. Compilation Testing
@@ -54,6 +56,7 @@ python compile_verilog_folder.py ./folder
 The csv_from_folders.py script generates a CSV file from a folder containing subfolders of Verilog code. The output CSV includes:
 
 Column 1: Verilog code
+
 Column 2: Corresponding error type
 
 Usage Example:
@@ -63,9 +66,10 @@ python csv_from_folders.py --input_dir ./automation-Scripts --output_csv output.
 ```
 
 --folder: Path to the main folder that contains subfolders with Verilog code.
+
 --output: Name/path of the CSV file to generate (e.g., verilog_error_dataset.csv).
 
-###2. Benchmarking
+### 2. Benchmarking
 In the benchmark folder, the VeriBenchmark.ipynb Jupyter Notebook benchmarks the SalesForce/codegen-350M-mono model on 10 samples from the dataset. The notebook reports an accuracy of 22.2% for error detection.
 
 To Run the Benchmark Notebook:
