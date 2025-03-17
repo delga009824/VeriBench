@@ -708,3 +708,5 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     main(args.input_folder, args.output_folder, args.error_type)
+
+    #python error_insertion.py ./no_error ./z_error_tests --error_type missing_semicolon
